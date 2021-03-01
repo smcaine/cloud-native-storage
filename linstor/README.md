@@ -2,7 +2,7 @@
 
 ## Overview - Architecture
 
-Linstor uses DRBD (can be used without using zfs or lvm) to create distributed replicated storage pools. The commercial offering provides a helm chart which can be used to deploy everything needed to get LInstor running in your cluster.
+Linstor uses DRBD (can be used without using zfs or lvm) to create distributed replicated storage pools. The commercial offering provides a helm chart which can be used to deploy everything needed to get Linstor running in your cluster.
 
 There is a community operator but unfortunately support for this is not provided by Linstor and the docs are not easy to follow, I would strongly recommend sticking with commercial offering.
 
@@ -85,7 +85,7 @@ kubectl patch storageclass fast-replicated -p '{"metadata": {"annotations":{"sto
 
 - Completely opensouce, support recommended in order to get the official install packages
 
-- Everything can be deployed using the kubernetes operator adn crd's (commercial only)
+- Everything can be deployed using the kubernetes operator adnd crd's (commercial only)
 
 - Synchronous replication
 
@@ -106,10 +106,10 @@ kubectl patch storageclass fast-replicated -p '{"metadata": {"annotations":{"sto
 
 - Steeper learning curve compared to others
 
-- Support were slow to reply, especially on slack
+- Support were sometimes slow to reply, especially on slack
 
-- Community offerings not very easy to implement
+- Community offering's not very easy to implement copared to other solutions
 
-- Documentation is confusing, the link above was sent by an engineer but i couldnt navigate to it from the site
+- Documentation is somewhat confusing, the link above was sent by an engineer but I couldnt navigate to it from the site
 
 - No UI
