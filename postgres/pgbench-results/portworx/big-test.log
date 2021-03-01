@@ -1,0 +1,44 @@
+bash-4.2$ 
+bash-4.2$ 
+bash-4.2$ 
+bash-4.2$ /opt/cpm/bin/start.sh
+NOTICE:  table "pgbench_history" does not exist, skipping
+NOTICE:  table "pgbench_tellers" does not exist, skipping
+NOTICE:  table "pgbench_accounts" does not exist, skipping
+NOTICE:  table "pgbench_branches" does not exist, skipping
+creating tables...
+2648400 of 40000000 tuples (6%) done (elapsed 5.07 s, remaining 71.48 s)
+5144400 of 40000000 tuples (12%) done (elapsed 10.12 s, remaining 68.58 s)
+6883800 of 40000000 tuples (17%) done (elapsed 15.00 s, remaining 72.16 s)
+9637900 of 40000000 tuples (24%) done (elapsed 20.10 s, remaining 63.30 s)
+11685200 of 40000000 tuples (29%) done (elapsed 25.00 s, remaining 60.58 s)
+13736400 of 40000000 tuples (34%) done (elapsed 30.11 s, remaining 57.56 s)
+16328500 of 40000000 tuples (40%) done (elapsed 35.05 s, remaining 50.81 s)
+18262200 of 40000000 tuples (45%) done (elapsed 40.10 s, remaining 47.74 s)
+20897700 of 40000000 tuples (52%) done (elapsed 45.01 s, remaining 41.14 s)
+22914900 of 40000000 tuples (57%) done (elapsed 50.09 s, remaining 37.35 s)
+25420500 of 40000000 tuples (63%) done (elapsed 56.03 s, remaining 32.13 s)
+27638200 of 40000000 tuples (69%) done (elapsed 60.00 s, remaining 26.84 s)
+29825800 of 40000000 tuples (74%) done (elapsed 65.06 s, remaining 22.19 s)
+32290800 of 40000000 tuples (80%) done (elapsed 70.06 s, remaining 16.73 s)
+34033400 of 40000000 tuples (85%) done (elapsed 75.06 s, remaining 13.16 s)
+36628300 of 40000000 tuples (91%) done (elapsed 80.00 s, remaining 7.36 s)
+38750800 of 40000000 tuples (96%) done (elapsed 85.01 s, remaining 2.74 s)
+40000000 of 40000000 tuples (100%) done (elapsed 87.34 s, remaining 0.00 s)
+vacuum...
+set primary keys...
+done.
+scale option ignored, using count from pgbench_branches table (400)
+starting vacuum...end.
+connection to database "userdb" failed:
+FATAL:  remaining connection slots are reserved for non-replication superuser connections
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 400
+query mode: simple
+number of clients: 100
+number of threads: 4
+number of transactions per client: 10000
+number of transactions actually processed: 750000/1000000
+latency average = 58.801 ms
+tps = 1700.660145 (including connections establishing)
+tps = 1700.670399 (excluding connections establishing)

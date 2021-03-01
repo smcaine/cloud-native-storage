@@ -1,0 +1,141 @@
+kubectl logs geo-elasticsearch-rally-hr65v -f
+
+    ____        ____
+   / __ \____ _/ / /_  __
+  / /_/ / __ `/ / / / / /
+ / _, _/ /_/ / / / /_/ /
+/_/ |_|\__,_/_/_/\__, /
+                /____/
+
+[INFO] Downloading data for track geopoint (482.1 MB total size)                  [100.0%]
+[INFO] Decompressing track data from [${node:root.dir}/es-data/geopoint/documents.json.bz2] to [${node:root.dir}/es-data/geopoint/documents.json] (resulting size: 2.28 GB) ... [OK]
+[INFO] Preparing file offset table for [${node:root.dir}/es-data/geopoint/documents.json] ... [OK]
+Running delete-index                                                           [100% done]
+Running create-index                                                           [100% done]
+Running check-cluster-health                                                   [100% done]
+Running index-append                                                           [100% done]
+Running refresh-after-index                                                    [100% done]
+Running force-merge                                                            [100% done]
+Running refresh-after-force-merge                                              [100% done]
+Running wait-until-merges-finish                                               [100% done]
+Running polygon                                                                [100% done]
+Running bbox                                                                   [100% done]
+Running distance                                                               [100% done]
+Running distanceRange                                                          [100% done][INFO] Racing on track [geopoint], challenge [append-no-conflicts] and car ['external'] with version [6.7.0].
+
+
+------------------------------------------------------
+    _______             __   _____
+   / ____(_)___  ____ _/ /  / ___/_________  ________
+  / /_  / / __ \/ __ `/ /   \__ \/ ___/ __ \/ ___/ _ \
+ / __/ / / / / / /_/ / /   ___/ / /__/ /_/ / /  /  __/
+/_/   /_/_/ /_/\__,_/_/   /____/\___/\____/_/   \___/
+------------------------------------------------------
+            
+Metric,Task,Value,Unit
+Cumulative indexing time of primary shards,,27.90625,min
+Min cumulative indexing time across primary shards,,4.232283333333333,min
+Median cumulative indexing time across primary shards,,5.7932,min
+Max cumulative indexing time across primary shards,,6.195233333333333,min
+Cumulative indexing throttle time of primary shards,,0,min
+Min cumulative indexing throttle time across primary shards,,0,min
+Median cumulative indexing throttle time across primary shards,,0,min
+Max cumulative indexing throttle time across primary shards,,0,min
+Cumulative merge time of primary shards,,17.471533333333333,min
+Cumulative merge count of primary shards,,661,
+Min cumulative merge time across primary shards,,3.0495500000000004,min
+Median cumulative merge time across primary shards,,3.2932833333333336,min
+Max cumulative merge time across primary shards,,4.0391,min
+Cumulative merge throttle time of primary shards,,5.32205,min
+Min cumulative merge throttle time across primary shards,,0.7649,min
+Median cumulative merge throttle time across primary shards,,1.0762833333333333,min
+Max cumulative merge throttle time across primary shards,,1.3668666666666667,min
+Cumulative refresh time of primary shards,,1.6822000000000001,min
+Cumulative refresh count of primary shards,,876,
+Min cumulative refresh time across primary shards,,0.32603333333333334,min
+Median cumulative refresh time across primary shards,,0.3352,min
+Max cumulative refresh time across primary shards,,0.34951666666666664,min
+Cumulative flush time of primary shards,,0.5565166666666667,min
+Cumulative flush count of primary shards,,15,
+Min cumulative flush time across primary shards,,0.07865000000000001,min
+Median cumulative flush time across primary shards,,0.11265,min
+Max cumulative flush time across primary shards,,0.13906666666666664,min
+Total Young Gen GC,,44.812,s
+Total Old Gen GC,,0.177,s
+Store size,,3.5675888527184725,GB
+Translog size,,2.551432211883366,GB
+Heap used for segments,,27.38826847076416,MB
+Heap used for doc values,,0.0069427490234375,MB
+Heap used for terms,,25.027241706848145,MB
+Heap used for norms,,0,MB
+Heap used for points,,0.8567390441894531,MB
+Heap used for stored fields,,1.497344970703125,MB
+Segment count,,94,
+Min Throughput,index-append,308660.14,docs/s
+Median Throughput,index-append,314052.53,docs/s
+Max Throughput,index-append,326138.46,docs/s
+50th percentile latency,index-append,100.94310999920708,ms
+90th percentile latency,index-append,164.1656484000123,ms
+99th percentile latency,index-append,955.0413434801886,ms
+99.9th percentile latency,index-append,2016.36036863973,ms
+100th percentile latency,index-append,2027.6819539994904,ms
+50th percentile service time,index-append,100.94310999920708,ms
+90th percentile service time,index-append,164.1656484000123,ms
+99th percentile service time,index-append,955.0413434801886,ms
+99.9th percentile service time,index-append,2016.36036863973,ms
+100th percentile service time,index-append,2027.6819539994904,ms
+error rate,index-append,0.00,%
+Min Throughput,polygon,2.01,ops/s
+Median Throughput,polygon,2.01,ops/s
+Max Throughput,polygon,2.01,ops/s
+50th percentile latency,polygon,59.88760649870528,ms
+90th percentile latency,polygon,63.14092809861905,ms
+99th percentile latency,polygon,70.31395849977345,ms
+100th percentile latency,polygon,71.86969399845111,ms
+50th percentile service time,polygon,58.54374599948642,ms
+90th percentile service time,polygon,62.01138380001794,ms
+99th percentile service time,polygon,69.26048657076537,ms
+100th percentile service time,polygon,70.76563999908103,ms
+error rate,polygon,0.00,%
+Min Throughput,bbox,2.01,ops/s
+Median Throughput,bbox,2.01,ops/s
+Max Throughput,bbox,2.01,ops/s
+50th percentile latency,bbox,76.90247499976977,ms
+90th percentile latency,bbox,79.14391569938743,ms
+99th percentile latency,bbox,84.50017200888396,ms
+100th percentile latency,bbox,85.43106999968586,ms
+50th percentile service time,bbox,75.57366599939996,ms
+90th percentile service time,bbox,77.94514769957459,ms
+99th percentile service time,bbox,83.57709183012048,ms
+100th percentile service time,bbox,84.50797200021043,ms
+error rate,bbox,0.00,%
+Min Throughput,distance,5.02,ops/s
+Median Throughput,distance,5.02,ops/s
+Max Throughput,distance,5.02,ops/s
+50th percentile latency,distance,12.447730499843601,ms
+90th percentile latency,distance,14.58088440103893,ms
+99th percentile latency,distance,19.78368402087654,ms
+100th percentile latency,distance,20.406990000992664,ms
+50th percentile service time,distance,11.38792250003462,ms
+90th percentile service time,distance,13.470285500261525,ms
+99th percentile service time,distance,18.684264599796737,ms
+100th percentile service time,distance,19.073493000178132,ms
+error rate,distance,0.00,%
+Min Throughput,distanceRange,0.49,ops/s
+Median Throughput,distanceRange,0.50,ops/s
+Max Throughput,distanceRange,0.50,ops/s
+50th percentile latency,distanceRange,2935.3087415001937,ms
+90th percentile latency,distanceRange,9664.857776699866,ms
+99th percentile latency,distanceRange,10444.23991108015,ms
+100th percentile latency,distanceRange,10850.203378000515,ms
+50th percentile service time,distanceRange,1802.2254774996327,ms
+90th percentile service time,distanceRange,2659.5467112991178,ms
+99th percentile service time,distanceRange,3217.934042570727,ms
+100th percentile service time,distanceRange,3882.7277119999053,ms
+error rate,distanceRange,0.00,%
+
+
+
+----------------------------------
+[INFO] SUCCESS (took 1281 seconds)
+----------------------------------

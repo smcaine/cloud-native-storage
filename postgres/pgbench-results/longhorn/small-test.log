@@ -1,0 +1,47 @@
+kubectl exec -it pgbench -- bash
+bash-4.2$ /opt/cpm/bin/start.sh
+connection to database "userdb" failed:
+could not translate host name "postgres-0.postgres" to address: Name or service not known
+bash-4.2$ /opt/cpm/bin/start.sh
+NOTICE:  table "pgbench_history" does not exist, skipping
+NOTICE:  table "pgbench_tellers" does not exist, skipping
+NOTICE:  table "pgbench_accounts" does not exist, skipping
+NOTICE:  table "pgbench_branches" does not exist, skipping
+creating tables...
+2422000 of 40000000 tuples (6%) done (elapsed 5.00 s, remaining 77.58 s)
+4755100 of 40000000 tuples (11%) done (elapsed 10.05 s, remaining 74.47 s)
+5888600 of 40000000 tuples (14%) done (elapsed 15.46 s, remaining 89.57 s)
+8056900 of 40000000 tuples (20%) done (elapsed 20.01 s, remaining 79.33 s)
+9835800 of 40000000 tuples (24%) done (elapsed 26.05 s, remaining 79.89 s)
+11697300 of 40000000 tuples (29%) done (elapsed 30.08 s, remaining 72.78 s)
+13730100 of 40000000 tuples (34%) done (elapsed 36.48 s, remaining 69.80 s)
+15406300 of 40000000 tuples (38%) done (elapsed 40.00 s, remaining 63.85 s)
+17638100 of 40000000 tuples (44%) done (elapsed 46.88 s, remaining 59.43 s)
+19139600 of 40000000 tuples (47%) done (elapsed 50.01 s, remaining 54.50 s)
+21456300 of 40000000 tuples (53%) done (elapsed 55.01 s, remaining 47.54 s)
+22945700 of 40000000 tuples (57%) done (elapsed 60.14 s, remaining 44.70 s)
+25256300 of 40000000 tuples (63%) done (elapsed 65.17 s, remaining 38.04 s)
+26659600 of 40000000 tuples (66%) done (elapsed 70.00 s, remaining 35.03 s)
+29044100 of 40000000 tuples (72%) done (elapsed 75.06 s, remaining 28.31 s)
+30446500 of 40000000 tuples (76%) done (elapsed 80.09 s, remaining 25.13 s)
+32812600 of 40000000 tuples (82%) done (elapsed 85.00 s, remaining 18.62 s)
+34156700 of 40000000 tuples (85%) done (elapsed 90.07 s, remaining 15.41 s)
+36507800 of 40000000 tuples (91%) done (elapsed 95.09 s, remaining 9.10 s)
+37938300 of 40000000 tuples (94%) done (elapsed 100.03 s, remaining 5.44 s)
+40000000 of 40000000 tuples (100%) done (elapsed 104.41 s, remaining 0.00 s)
+vacuum...
+set primary keys...
+done.
+scale option ignored, using count from pgbench_branches table (400)
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 400
+query mode: simple
+number of clients: 1
+number of threads: 1
+number of transactions per client: 10
+number of transactions actually processed: 10/10
+latency average = 2.422 ms
+tps = 412.891957 (including connections establishing)
+tps = 476.719771 (excluding connections establishing)
+bash-4.2$

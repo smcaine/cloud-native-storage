@@ -1,0 +1,40 @@
+kubectl exec -it pgbench -- bash                           
+bash-4.2$ /opt/cpm/bin/start.sh
+NOTICE:  table "pgbench_history" does not exist, skipping
+NOTICE:  table "pgbench_tellers" does not exist, skipping
+NOTICE:  table "pgbench_accounts" does not exist, skipping
+NOTICE:  table "pgbench_branches" does not exist, skipping
+creating tables...
+2833400 of 40000000 tuples (7%) done (elapsed 5.01 s, remaining 65.66 s)
+5734100 of 40000000 tuples (14%) done (elapsed 10.00 s, remaining 59.76 s)
+7637800 of 40000000 tuples (19%) done (elapsed 15.01 s, remaining 63.61 s)
+9829800 of 40000000 tuples (24%) done (elapsed 20.12 s, remaining 61.76 s)
+12476700 of 40000000 tuples (31%) done (elapsed 25.04 s, remaining 55.23 s)
+14775200 of 40000000 tuples (36%) done (elapsed 30.01 s, remaining 51.23 s)
+17642000 of 40000000 tuples (44%) done (elapsed 36.16 s, remaining 45.83 s)
+19789100 of 40000000 tuples (49%) done (elapsed 40.11 s, remaining 40.96 s)
+22004000 of 40000000 tuples (55%) done (elapsed 45.01 s, remaining 36.81 s)
+24902100 of 40000000 tuples (62%) done (elapsed 50.04 s, remaining 30.34 s)
+27184900 of 40000000 tuples (67%) done (elapsed 55.00 s, remaining 25.93 s)
+29478200 of 40000000 tuples (73%) done (elapsed 60.00 s, remaining 21.42 s)
+32467600 of 40000000 tuples (81%) done (elapsed 65.00 s, remaining 15.08 s)
+34664200 of 40000000 tuples (86%) done (elapsed 70.02 s, remaining 10.78 s)
+37132700 of 40000000 tuples (92%) done (elapsed 75.24 s, remaining 5.81 s)
+39549200 of 40000000 tuples (98%) done (elapsed 80.00 s, remaining 0.91 s)
+40000000 of 40000000 tuples (100%) done (elapsed 80.84 s, remaining 0.00 s)
+vacuum...
+set primary keys...
+done.
+scale option ignored, using count from pgbench_branches table (400)
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 400
+query mode: simple
+number of clients: 1
+number of threads: 1
+number of transactions per client: 10
+number of transactions actually processed: 10/10
+latency average = 7.977 ms
+tps = 125.356847 (including connections establishing)
+tps = 132.623884 (excluding connections establishing)
+bash-4.2$ 

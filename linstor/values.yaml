@@ -1,0 +1,37 @@
+etcd:
+  persistentVolume:
+    enabled: true
+    storage: 2Gi
+  replicas: 3 # How many instances of etcd will be added to the initial cluster.
+stork:
+  enabled: true
+  image: docker.io/linbit/stork:latest
+  replicas: 1
+csi-snapshotter:
+  enabled: true # <- enable to add k8s snapshotting CRDs and controller. Needed for CSI snapshotting
+csi:
+  enabled: true
+  pluginImage: "drbd.io/linstor-csi:v0.9.0"
+  csiAttacherImage: ""
+  csiNodeDriverRegistrarImage: ""
+  csiProvisionerImage: ""
+  csiSnapshotterImage: ""
+priorityClassName: ""
+drbdRepoCred: drbdiocred # <- Specify the kubernetes secret name here
+linstorHttpsControllerSecret: "" # <- name of secret containing linstor server certificates+key. See docs/security.md
+linstorHttpsClientSecret: "" # <- name of secret containing linstor client certificates+key. See docs/security.md
+operator:
+  image: "drbd.io/linstor-operator:v0.5.0"
+  controllerSet:
+    controllerImage: "drbd.io/linstor-controller:v1.7.1"
+    luksSecret: ""
+    dbCertSecret: ""
+    dbUseClientCert: false
+    sslSecret: ""
+  nodeSet:
+    drbdKernelModuleInjectionMode: ShippedModules
+    satelliteImage: "drbd.io/linstor-satellite:v1.7.1"
+    kernelModImage: "drbd.io/drbd9-rhel7:v9.0.23"
+    storagePools: null
+    sslSecret: ""
+    automaticStorageType: LVMTHIN

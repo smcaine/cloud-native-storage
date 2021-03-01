@@ -1,0 +1,38 @@
+kubectl exec -it pgbench -- bash -c '/opt/cpm/bin/start.sh'
+NOTICE:  table "pgbench_history" does not exist, skipping
+NOTICE:  table "pgbench_tellers" does not exist, skipping
+NOTICE:  table "pgbench_accounts" does not exist, skipping
+NOTICE:  table "pgbench_branches" does not exist, skipping
+creating tables...
+3099900 of 40000000 tuples (7%) done (elapsed 5.07 s, remaining 60.33 s)
+5913600 of 40000000 tuples (14%) done (elapsed 11.99 s, remaining 69.12 s)
+7788300 of 40000000 tuples (19%) done (elapsed 15.06 s, remaining 62.29 s)
+9858900 of 40000000 tuples (24%) done (elapsed 20.00 s, remaining 61.15 s)
+12847300 of 40000000 tuples (32%) done (elapsed 25.00 s, remaining 52.84 s)
+14932800 of 40000000 tuples (37%) done (elapsed 30.01 s, remaining 50.37 s)
+17623700 of 40000000 tuples (44%) done (elapsed 36.21 s, remaining 45.98 s)
+19959200 of 40000000 tuples (49%) done (elapsed 40.00 s, remaining 40.17 s)
+21942500 of 40000000 tuples (54%) done (elapsed 45.00 s, remaining 37.03 s)
+24963700 of 40000000 tuples (62%) done (elapsed 50.05 s, remaining 30.15 s)
+27033500 of 40000000 tuples (67%) done (elapsed 55.00 s, remaining 26.38 s)
+29304300 of 40000000 tuples (73%) done (elapsed 60.39 s, remaining 22.04 s)
+32078600 of 40000000 tuples (80%) done (elapsed 65.01 s, remaining 16.05 s)
+34148500 of 40000000 tuples (85%) done (elapsed 70.10 s, remaining 12.01 s)
+37147900 of 40000000 tuples (92%) done (elapsed 76.61 s, remaining 5.88 s)
+39174900 of 40000000 tuples (97%) done (elapsed 80.01 s, remaining 1.69 s)
+40000000 of 40000000 tuples (100%) done (elapsed 81.45 s, remaining 0.00 s)
+vacuum...
+set primary keys...
+done.
+scale option ignored, using count from pgbench_branches table (400)
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 400
+query mode: simple
+number of clients: 1
+number of threads: 1
+number of transactions per client: 10
+number of transactions actually processed: 10/10
+latency average = 2.515 ms
+tps = 397.591423 (including connections establishing)
+tps = 462.938787 (excluding connections establishing)

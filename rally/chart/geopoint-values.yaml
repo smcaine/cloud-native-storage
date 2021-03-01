@@ -1,0 +1,9 @@
+image: schaga/esrally:1.0.3
+track: geopoint
+targetHosts: "elasticsearch.elasticsearch:9200"
+pipeline: benchmark-only
+challenge: append-no-conflicts
+dataDir: /esrally-data
+volClaimName: geopoint-pvc
+reportFile: report-geopoint.csv
+storageSize: 20Gi

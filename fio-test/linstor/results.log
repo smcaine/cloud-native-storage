@@ -1,0 +1,324 @@
+kubectl logs dbench-replicated-c95n4  
+Working dir: /data
+
+Testing Read IOPS...
+read_iops: (g=0): rw=randread, bs=4096B-4096B,4096B-4096B,4096B-4096B, ioengine=libaio, iodepth=64
+fio-2.17-45-g06cb
+Starting 1 process
+read_iops: Laying out IO file(s) (1 file(s) / 10240MiB)
+
+read_iops: (groupid=0, jobs=1): err= 0: pid=56: Wed Jun 24 15:54:48 2020
+   read: IOPS=70.8k, BW=276MiB/s (290MB/s)(243GiB/900002msec)
+  cpu          : usr=7.21%, sys=92.43%, ctx=77585, majf=0, minf=3401
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.2%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.1%, >=64=0.0%
+     issued rwt: total=63695616,0,0, short=0,0,0, dropped=0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=64
+
+Run status group 0 (all jobs):
+   READ: bw=276MiB/s (290MB/s), 276MiB/s-276MiB/s (290MB/s-290MB/s), io=243GiB (261GB), run=900002-900002msec
+
+Disk stats (read/write):
+    drbd1003: ios=63823263/2765, merge=0/0, ticks=28873298/10993, in_queue=28882285, util=100.00%, aggrios=63823422/2938, aggrmerge=0/0, aggrticks=28795883/9896, aggrin_queue=28832595, aggrutil=100.00%
+    dm-10: ios=63823422/2938, merge=0/0, ticks=28795883/9896, in_queue=28832595, util=100.00%, aggrios=63823422/4332, aggrmerge=0/0, aggrticks=28427294/8689, aggrin_queue=28469590, aggrutil=100.00%
+    dm-5: ios=63823422/4332, merge=0/0, ticks=28427294/8689, in_queue=28469590, util=100.00%, aggrios=31911711/4030, aggrmerge=0/0, aggrticks=14183564/7281, aggrin_queue=14204933, aggrutil=100.00%
+    dm-3: ios=0/3729, merge=0/0, ticks=0/5878, in_queue=5878, util=0.10%, aggrios=63755641/6756, aggrmerge=67951/1293, aggrticks=28352568/10686, aggrin_queue=28378933, aggrutil=100.00%
+  sdb: ios=63755641/6756, merge=67951/1293, ticks=28352568/10686, in_queue=28378933, util=100.00%
+  dm-4: ios=63823422/4332, merge=0/0, ticks=28367129/8685, in_queue=28403989, util=100.00%
+
+
+Testing Write IOPS...
+write_iops: (g=0): rw=randwrite, bs=4096B-4096B,4096B-4096B,4096B-4096B, ioengine=libaio, iodepth=64
+fio-2.17-45-g06cb
+Starting 1 process
+
+write_iops: (groupid=0, jobs=1): err= 0: pid=112: Wed Jun 24 16:09:51 2020
+  write: IOPS=30.2k, BW=118MiB/s (123MB/s)(103GiB/900003msec)
+  cpu          : usr=6.75%, sys=45.55%, ctx=8382822, majf=0, minf=2381
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.2%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.1%, >=64=0.0%
+     issued rwt: total=0,27105632,0, short=0,0,0, dropped=0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=64
+
+Run status group 0 (all jobs):
+  WRITE: bw=118MiB/s (123MB/s), 118MiB/s-118MiB/s (123MB/s-123MB/s), io=103GiB (111GB), run=900003-900003msec
+
+Disk stats (read/write):
+    drbd1003: ios=0/27164423, merge=0/0, ticks=0/56881034, in_queue=56910907, util=100.00%, aggrios=0/29094727, aggrmerge=0/0, aggrticks=0/4483873, aggrin_queue=4488855, aggrutil=98.19%
+    dm-10: ios=0/29094727, merge=0/0, ticks=0/4483873, in_queue=4488855, util=98.19%, aggrios=0/31025128, aggrmerge=0/0, aggrticks=0/4276819, aggrin_queue=4282579, aggrutil=97.22%
+    dm-5: ios=0/31025128, merge=0/0, ticks=0/4276819, in_queue=4282579, util=97.22%, aggrios=1/15512564, aggrmerge=0/0, aggrticks=0/2121215, aggrin_queue=2124255, aggrutil=97.04%
+    dm-3: ios=2/0, merge=0/0, ticks=0/0, in_queue=0, util=0.00%, aggrios=152/31024155, aggrmerge=0/968, aggrticks=176/4270678, aggrin_queue=4269556, aggrutil=97.24%
+  sdb: ios=152/31024155, merge=0/968, ticks=176/4270678, in_queue=4269556, util=97.24%
+  dm-4: ios=0/31025128, merge=0/0, ticks=0/4242430, in_queue=4248510, util=97.04%
+
+
+Testing Read Bandwidth...
+read_bw: (g=0): rw=randread, bs=128KiB-128KiB,128KiB-128KiB,128KiB-128KiB, ioengine=libaio, iodepth=64
+fio-2.17-45-g06cb
+Starting 1 process
+
+read_bw: (groupid=0, jobs=1): err= 0: pid=168: Wed Jun 24 16:24:53 2020
+   read: IOPS=3504, BW=438MiB/s (459MB/s)(385GiB/900025msec)
+  cpu          : usr=0.81%, sys=9.18%, ctx=2989629, majf=0, minf=4329
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.2%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.1%, >=64=0.0%
+     issued rwt: total=3153884,0,0, short=0,0,0, dropped=0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=64
+
+Run status group 0 (all jobs):
+   READ: bw=438MiB/s (459MB/s), 438MiB/s-438MiB/s (459MB/s-459MB/s), io=385GiB (413GB), run=900025-900025msec
+
+Disk stats (read/write):
+    drbd1003: ios=3160862/4, merge=0/0, ticks=57644616/145, in_queue=57644050, util=100.00%, aggrios=3160894/6, aggrmerge=0/0, aggrticks=57642525/117, aggrin_queue=57644052, aggrutil=100.00%
+    dm-10: ios=3160894/6, merge=0/0, ticks=57642525/117, in_queue=57644052, util=100.00%, aggrios=3160894/9, aggrmerge=0/0, aggrticks=57627698/117, aggrin_queue=57629180, aggrutil=100.00%
+    dm-5: ios=3160894/9, merge=0/0, ticks=57627698/117, in_queue=57629180, util=100.00%, aggrios=1580447/4, aggrmerge=0/0, aggrticks=28812707/58, aggrin_queue=28814180, aggrutil=100.00%
+    dm-3: ios=0/0, merge=0/0, ticks=0/0, in_queue=0, util=0.00%, aggrios=3102314/8, aggrmerge=58718/1, aggrticks=56654453/100, aggrin_queue=56653483, aggrutil=100.00%
+  sdb: ios=3102314/8, merge=58718/1, ticks=56654453/100, in_queue=56653483, util=100.00%
+  dm-4: ios=3160894/9, merge=0/0, ticks=57625414/117, in_queue=57628360, util=100.00%
+
+
+Testing Write Bandwidth...
+write_bw: (g=0): rw=randwrite, bs=128KiB-128KiB,128KiB-128KiB,128KiB-128KiB, ioengine=libaio, iodepth=64
+fio-2.17-45-g06cb
+Starting 1 process
+
+write_bw: (groupid=0, jobs=1): err= 0: pid=224: Wed Jun 24 16:39:56 2020
+  write: IOPS=2522, BW=315MiB/s (331MB/s)(277GiB/900029msec)
+  cpu          : usr=3.00%, sys=7.38%, ctx=2257203, majf=0, minf=3788
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.2%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.1%, >=64=0.0%
+     issued rwt: total=0,2270243,0, short=0,0,0, dropped=0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=64
+
+Run status group 0 (all jobs):
+  WRITE: bw=315MiB/s (331MB/s), 315MiB/s-315MiB/s (331MB/s-331MB/s), io=277GiB (298GB), run=900029-900029msec
+
+Disk stats (read/write):
+    drbd1003: ios=0/2275795, merge=0/0, ticks=0/57507472, in_queue=57507189, util=100.00%, aggrios=0/2545710, aggrmerge=0/0, aggrticks=0/13376522, aggrin_queue=13378873, aggrutil=96.23%
+    dm-10: ios=0/2545710, merge=0/0, ticks=0/13376522, in_queue=13378873, util=96.23%, aggrios=0/2815798, aggrmerge=0/0, aggrticks=0/13357246, aggrin_queue=13360276, aggrutil=95.89%
+    dm-5: ios=0/2815798, merge=0/0, ticks=0/13357246, in_queue=13360276, util=95.89%, aggrios=1/1407899, aggrmerge=0/0, aggrticks=0/6677049, aggrin_queue=6679469, aggrutil=95.86%
+    dm-3: ios=2/0, merge=0/0, ticks=1/0, in_queue=1, util=0.00%, aggrios=152/2798692, aggrmerge=0/17104, aggrticks=994/13008120, aggrin_queue=13006002, aggrutil=95.83%
+  sdb: ios=152/2798692, merge=0/17104, ticks=994/13008120, in_queue=13006002, util=95.83%
+  dm-4: ios=0/2815798, merge=0/0, ticks=0/13354099, in_queue=13358938, util=95.86%
+
+
+Testing Read Latency...
+read_latency: (g=0): rw=randread, bs=4096B-4096B,4096B-4096B,4096B-4096B, ioengine=libaio, iodepth=4
+fio-2.17-45-g06cb
+Starting 1 process
+
+read_latency: (groupid=0, jobs=1): err= 0: pid=280: Wed Jun 24 16:54:59 2020
+   read: IOPS=25.1k, BW=101MiB/s (106MB/s)(89.2GiB/900001msec)
+    slat (usec): min=7, max=232, avg=12.66, stdev= 2.79
+    clat (usec): min=39, max=4148, avg=139.24, stdev=44.94
+     lat (usec): min=64, max=4160, avg=151.90, stdev=44.90
+    clat percentiles (usec):
+     |  1.00th=[   87],  5.00th=[   91], 10.00th=[   96], 20.00th=[  105],
+     | 30.00th=[  112], 40.00th=[  119], 50.00th=[  133], 60.00th=[  145],
+     | 70.00th=[  153], 80.00th=[  165], 90.00th=[  191], 95.00th=[  225],
+     | 99.00th=[  274], 99.50th=[  298], 99.90th=[  366], 99.95th=[  390],
+     | 99.99th=[  556]
+    lat (usec) : 50=0.01%, 100=13.62%, 250=84.57%, 500=1.80%, 750=0.01%
+    lat (usec) : 1000=0.01%
+    lat (msec) : 2=0.01%, 4=0.01%, 10=0.01%
+  cpu          : usr=5.64%, sys=41.73%, ctx=15003101, majf=0, minf=1472
+  IO depths    : 1=0.1%, 2=0.1%, 4=100.2%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwt: total=23374341,0,0, short=0,0,0, dropped=0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=4
+
+Run status group 0 (all jobs):
+   READ: bw=101MiB/s (106MB/s), 101MiB/s-101MiB/s (106MB/s-106MB/s), io=89.2GiB (95.8GB), run=900001-900001msec
+
+Disk stats (read/write):
+    drbd1003: ios=23425728/4, merge=0/0, ticks=3265617/1, in_queue=3257177, util=100.00%, aggrios=23425763/6, aggrmerge=0/0, aggrticks=3240244/1, aggrin_queue=3240330, aggrutil=100.00%
+    dm-10: ios=23425763/6, merge=0/0, ticks=3240244/1, in_queue=3240330, util=100.00%, aggrios=23425763/9, aggrmerge=0/0, aggrticks=3137637/1, aggrin_queue=3137899, aggrutil=100.00%
+    dm-5: ios=23425763/9, merge=0/0, ticks=3137637/1, in_queue=3137899, util=100.00%, aggrios=11712881/4, aggrmerge=0/0, aggrticks=1561110/0, aggrin_queue=1561191, aggrutil=100.00%
+    dm-3: ios=0/0, merge=0/0, ticks=0/0, in_queue=0, util=0.00%, aggrios=23425913/8, aggrmerge=0/1, aggrticks=3132137/1, aggrin_queue=3128530, aggrutil=100.00%
+  sdb: ios=23425913/8, merge=0/1, ticks=3132137/1, in_queue=3128530, util=100.00%
+  dm-4: ios=23425763/9, merge=0/0, ticks=3122221/1, in_queue=3122382, util=100.00%
+
+
+Testing Write Latency...
+write_latency: (g=0): rw=randwrite, bs=4096B-4096B,4096B-4096B,4096B-4096B, ioengine=libaio, iodepth=4
+fio-2.17-45-g06cb
+Starting 1 process
+
+write_latency: (groupid=0, jobs=1): err= 0: pid=336: Wed Jun 24 17:10:01 2020
+  write: IOPS=7049, BW=27.6MiB/s (28.9MB/s)(24.3GiB/900001msec)
+    slat (usec): min=2, max=5526, avg=14.79, stdev= 8.18
+    clat (usec): min=112, max=53198, avg=550.29, stdev=285.72
+     lat (usec): min=147, max=53211, avg=565.08, stdev=281.19
+    clat percentiles (usec):
+     |  1.00th=[  183],  5.00th=[  213], 10.00th=[  237], 20.00th=[  302],
+     | 30.00th=[  374], 40.00th=[  458], 50.00th=[  548], 60.00th=[  636],
+     | 70.00th=[  700], 80.00th=[  772], 90.00th=[  860], 95.00th=[  924],
+     | 99.00th=[ 1048], 99.50th=[ 1096], 99.90th=[ 1592], 99.95th=[ 2672],
+     | 99.99th=[ 5536]
+    lat (usec) : 250=12.66%, 500=31.00%, 750=33.62%, 1000=20.99%
+    lat (msec) : 2=1.66%, 4=0.05%, 10=0.02%, 20=0.01%, 50=0.01%
+    lat (msec) : 100=0.01%
+  cpu          : usr=2.77%, sys=12.94%, ctx=5317507, majf=0, minf=994
+  IO depths    : 1=0.1%, 2=0.1%, 4=100.2%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwt: total=0,6344829,0, short=0,0,0, dropped=0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=4
+
+Run status group 0 (all jobs):
+  WRITE: bw=27.6MiB/s (28.9MB/s), 27.6MiB/s-27.6MiB/s (28.9MB/s-28.9MB/s), io=24.3GiB (25.1GB), run=900001-900001msec
+
+Disk stats (read/write):
+    drbd1003: ios=0/6358582, merge=0/0, ticks=0/3513740, in_queue=3510271, util=100.00%, aggrios=0/9242777, aggrmerge=0/0, aggrticks=0/795471, aggrin_queue=796033, aggrutil=70.48%
+    dm-10: ios=0/9242777, merge=0/0, ticks=0/795471, in_queue=796033, util=70.48%, aggrios=0/12127134, aggrmerge=0/0, aggrticks=0/710227, aggrin_queue=710934, aggrutil=64.78%
+    dm-5: ios=0/12127134, merge=0/0, ticks=0/710227, in_queue=710934, util=64.78%, aggrios=1/6063567, aggrmerge=0/0, aggrticks=0/349105, aggrin_queue=349722, aggrutil=63.98%
+    dm-3: ios=2/0, merge=0/0, ticks=0/0, in_queue=0, util=0.00%, aggrios=152/12126951, aggrmerge=0/183, aggrticks=132/704650, aggrin_queue=702384, aggrutil=64.28%
+  sdb: ios=152/12126951, merge=0/183, ticks=132/704650, in_queue=702384, util=64.28%
+  dm-4: ios=0/12127134, merge=0/0, ticks=0/698210, in_queue=699445, util=63.98%
+
+
+Testing Read Sequential Speed...
+read_seq: (g=0): rw=read, bs=1024KiB-1024KiB,1024KiB-1024KiB,1024KiB-1024KiB, ioengine=libaio, iodepth=16
+...
+fio-2.17-45-g06cb
+Starting 4 threads
+read_seq: Laying out IO file(s) (1 file(s) / 11740MiB)
+
+read_seq: (groupid=0, jobs=1): err= 0: pid=392: Wed Jun 24 17:25:46 2020
+   read: IOPS=130, BW=131MiB/s (137MB/s)(115GiB/900392msec)
+  cpu          : usr=0.04%, sys=1.63%, ctx=117805, majf=0, minf=809
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=100.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.1%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwt: total=117614,0,0, short=0,0,0, dropped=0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=16
+read_seq: (groupid=0, jobs=1): err= 0: pid=393: Wed Jun 24 17:25:46 2020
+   read: IOPS=130, BW=131MiB/s (137MB/s)(115GiB/900314msec)
+  cpu          : usr=0.04%, sys=1.62%, ctx=117791, majf=0, minf=1137
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=100.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.1%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwt: total=117614,0,0, short=0,0,0, dropped=0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=16
+read_seq: (groupid=0, jobs=1): err= 0: pid=394: Wed Jun 24 17:25:46 2020
+   read: IOPS=130, BW=131MiB/s (137MB/s)(115GiB/900287msec)
+  cpu          : usr=0.04%, sys=1.59%, ctx=117786, majf=0, minf=722
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=100.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.1%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwt: total=117614,0,0, short=0,0,0, dropped=0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=16
+read_seq: (groupid=0, jobs=1): err= 0: pid=395: Wed Jun 24 17:25:46 2020
+   read: IOPS=130, BW=131MiB/s (137MB/s)(115GiB/900260msec)
+  cpu          : usr=0.04%, sys=1.65%, ctx=117844, majf=0, minf=719
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=100.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.1%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwt: total=117614,0,0, short=0,0,0, dropped=0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=16
+
+Run status group 0 (all jobs):
+   READ: bw=523MiB/s (548MB/s), 131MiB/s-131MiB/s (137MB/s-137MB/s), io=459GiB (493GB), run=900260-900392msec
+
+Disk stats (read/write):
+    drbd1003: ios=1881976/5, merge=0/0, ticks=229301860/497, in_queue=229314497, util=99.86%, aggrios=1882080/6, aggrmerge=0/0, aggrticks=229325317/414, aggrin_queue=229326233, aggrutil=99.86%
+    dm-10: ios=1882080/6, merge=0/0, ticks=229325317/414, in_queue=229326233, util=99.86%, aggrios=1882080/8, aggrmerge=0/0, aggrticks=229316534/414, aggrin_queue=229317202, aggrutil=99.86%
+    dm-5: ios=1882080/8, merge=0/0, ticks=229316534/414, in_queue=229317202, util=99.86%, aggrios=941040/4, aggrmerge=0/0, aggrticks=114657401/207, aggrin_queue=114657863, aggrutil=99.87%
+    dm-3: ios=0/0, merge=0/0, ticks=0/0, in_queue=0, util=0.00%, aggrios=943859/7, aggrmerge=938383/1, aggrticks=115023302/349, aggrin_queue=115022858, aggrutil=99.87%
+  sdb: ios=943859/7, merge=938383/1, ticks=115023302/349, in_queue=115022858, util=99.87%
+  dm-4: ios=1882080/8, merge=0/0, ticks=229314802/414, in_queue=229315727, util=99.87%
+
+
+Testing Write Sequential Speed...
+write_seq: (g=0): rw=write, bs=1024KiB-1024KiB,1024KiB-1024KiB,1024KiB-1024KiB, ioengine=libaio, iodepth=16
+...
+fio-2.17-45-g06cb
+Starting 4 threads
+
+write_seq: (groupid=0, jobs=1): err= 0: pid=451: Wed Jun 24 17:40:50 2020
+  write: IOPS=77, BW=77.5MiB/s (81.2MB/s)(68.6GiB/900400msec)
+  cpu          : usr=0.59%, sys=0.74%, ctx=73229, majf=0, minf=3657
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=100.2%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.1%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwt: total=0,69676,0, short=0,0,0, dropped=0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=16
+write_seq: (groupid=0, jobs=1): err= 0: pid=452: Wed Jun 24 17:40:50 2020
+  write: IOPS=75, BW=75.8MiB/s (79.5MB/s)(66.7GiB/900655msec)
+  cpu          : usr=0.57%, sys=0.71%, ctx=72411, majf=0, minf=838
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=100.2%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.1%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwt: total=0,68202,0, short=0,0,0, dropped=0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=16
+write_seq: (groupid=0, jobs=1): err= 0: pid=453: Wed Jun 24 17:40:50 2020
+  write: IOPS=76, BW=76.4MiB/s (80.8MB/s)(67.2GiB/900748msec)
+  cpu          : usr=0.59%, sys=0.68%, ctx=72866, majf=0, minf=28400
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=100.2%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.1%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwt: total=0,68714,0, short=0,0,0, dropped=0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=16
+write_seq: (groupid=0, jobs=1): err= 0: pid=454: Wed Jun 24 17:40:50 2020
+  write: IOPS=76, BW=76.9MiB/s (80.6MB/s)(67.7GiB/900811msec)
+  cpu          : usr=0.60%, sys=0.73%, ctx=73448, majf=0, minf=834
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=100.2%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.1%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwt: total=0,69226,0, short=0,0,0, dropped=0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=16
+
+Run status group 0 (all jobs):
+  WRITE: bw=306MiB/s (321MB/s), 75.8MiB/s-77.5MiB/s (79.5MB/s-81.2MB/s), io=269GiB (289GB), run=900400-900811msec
+
+Disk stats (read/write):
+    drbd1003: ios=0/1106172, merge=0/0, ticks=0/229350109, in_queue=229351956, util=100.00%, aggrios=0/1110552, aggrmerge=0/0, aggrticks=0/13266538, aggrin_queue=13266551, aggrutil=90.78%
+    dm-10: ios=0/1110552, merge=0/0, ticks=0/13266538, in_queue=13266551, util=90.78%, aggrios=0/1115112, aggrmerge=0/0, aggrticks=0/13260473, aggrin_queue=13260483, aggrutil=90.74%
+    dm-5: ios=0/1115112, merge=0/0, ticks=0/13260473, in_queue=13260483, util=90.74%, aggrios=1/557556, aggrmerge=0/0, aggrticks=27/6629636, aggrin_queue=6629724, aggrutil=90.73%
+    dm-3: ios=3/0, merge=0/0, ticks=54/0, in_queue=54, util=0.01%, aggrios=153/650481, aggrmerge=0/464631, aggrticks=1619/7274360, aggrin_queue=7273250, aggrutil=90.73%
+  sdb: ios=153/650481, merge=0/464631, ticks=1619/7274360, in_queue=7273250, util=90.73%
+  dm-4: ios=0/1115112, merge=0/0, ticks=0/13259273, in_queue=13259394, util=90.73%
+
+
+Testing Read/Write Mixed...
+rw_mix: (g=0): rw=randrw, bs=4096B-4096B,4096B-4096B,4096B-4096B, ioengine=libaio, iodepth=64
+fio-2.17-45-g06cb
+Starting 1 process
+
+rw_mix: (groupid=0, jobs=1): err= 0: pid=510: Wed Jun 24 17:55:52 2020
+   read: IOPS=25.6k, BW=99.8MiB/s (105MB/s)(87.7GiB/900003msec)
+  write: IOPS=8508, BW=33.3MiB/s (34.9MB/s)(29.3GiB/900003msec)
+  cpu          : usr=4.92%, sys=67.11%, ctx=1525795, majf=0, minf=6461
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.2%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.1%, >=64=0.0%
+     issued rwt: total=22973033,7657976,0, short=0,0,0, dropped=0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=64
+
+Run status group 0 (all jobs):
+   READ: bw=99.8MiB/s (105MB/s), 99.8MiB/s-99.8MiB/s (105MB/s-105MB/s), io=87.7GiB (94.1GB), run=900003-900003msec
+  WRITE: bw=33.3MiB/s (34.9MB/s), 33.3MiB/s-33.3MiB/s (34.9MB/s-34.9MB/s), io=29.3GiB (31.4GB), run=900003-900003msec
+
+Disk stats (read/write):
+    drbd1003: ios=23025358/7676029, merge=0/0, ticks=25217589/16734789, in_queue=41927582, util=100.00%, aggrios=23025413/8271079, aggrmerge=0/0, aggrticks=25148777/5957709, aggrin_queue=31126462, aggrutil=100.00%
+    dm-10: ios=23025413/8271079, merge=0/0, ticks=25148777/5957709, in_queue=31126462, util=100.00%, aggrios=23025413/8866285, aggrmerge=0/0, aggrticks=24981968/5885111, aggrin_queue=30885836, aggrutil=100.00%
+    dm-5: ios=23025413/8866285, merge=0/0, ticks=24981968/5885111, in_queue=30885836, util=100.00%, aggrios=11512706/4433142, aggrmerge=0/0, aggrticks=12477207/2936502, aggrin_queue=15423626, aggrutil=100.00%
+    dm-3: ios=0/0, merge=0/0, ticks=0/0, in_queue=0, util=0.00%, aggrios=23021539/8865159, aggrmerge=4024/1125, aggrticks=24986707/5890374, aggrin_queue=30887826, aggrutil=100.00%
+  sdb: ios=23021539/8865159, merge=4024/1125, ticks=24986707/5890374, in_queue=30887826, util=100.00%
+  dm-4: ios=23025413/8866285, merge=0/0, ticks=24954415/5873004, in_queue=30847253, util=100.00%
+
+
+All tests complete.
+
+==================
+= FIO Summary =
+==================
+Random Read/Write IOPS: 70.8k/30.2k. BW: 438MiB/s / 315MiB/s
+Average Latency (usec) Read/Write: 151.90/565.08
+Sequential Read/Write: 523MiB/s / 306MiB/s
+Mixed Random Read/Write IOPS: 25.6k/8508

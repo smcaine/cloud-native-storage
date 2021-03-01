@@ -1,0 +1,174 @@
+kubectl logs http-logs-elasticsearch-rally-hp5vl
+
+    ____        ____
+   / __ \____ _/ / /_  __
+  / /_/ / __ `/ / / / / /
+ / _, _/ /_/ / / / /_/ /
+/_/ |_|\__,_/_/_/\__, /
+                /____/
+
+[INFO] Downloading data for track http_logs (13.2 MB total size)                  [100.0%]
+[INFO] Decompressing track data from [${node:root.dir}/es-data/http_logs/documents-181998.json.bz2] to [${node:root.dir}/es-data/http_logs/documents-181998.json] (resulting size: 0.34 GB) ... [OK]
+[INFO] Preparing file offset table for [${node:root.dir}/es-data/http_logs/documents-181998.json] ... [OK]
+[INFO] Downloading data for track http_logs (47.3 MB total size)                  [100.0%]
+[INFO] Decompressing track data from [${node:root.dir}/es-data/http_logs/documents-191998.json.bz2] to [${node:root.dir}/es-data/http_logs/documents-191998.json] (resulting size: 1.21 GB) ... [OK]
+[INFO] Preparing file offset table for [${node:root.dir}/es-data/http_logs/documents-191998.json] ... [OK]
+[INFO] Downloading data for track http_logs (62.7 MB total size)                  [100.0%]
+[INFO] Decompressing track data from [${node:root.dir}/es-data/http_logs/documents-201998.json.bz2] to [${node:root.dir}/es-data/http_logs/documents-201998.json] (resulting size: 1.62 GB) ... [OK]
+[INFO] Preparing file offset table for [${node:root.dir}/es-data/http_logs/documents-201998.json] ... [OK]
+[INFO] Downloading data for track http_logs (84.3 MB total size)                  [100.0%]
+[INFO] Decompressing track data from [${node:root.dir}/es-data/http_logs/documents-211998.json.bz2] to [${node:root.dir}/es-data/http_logs/documents-211998.json] (resulting size: 2.20 GB) ... [OK]
+[INFO] Preparing file offset table for [${node:root.dir}/es-data/http_logs/documents-211998.json] ... [OK]
+[INFO] Downloading data for track http_logs (51.8 MB total size)                  [100.0%]
+[INFO] Decompressing track data from [${node:root.dir}/es-data/http_logs/documents-221998.json.bz2] to [${node:root.dir}/es-data/http_logs/documents-221998.json] (resulting size: 1.34 GB) ... [OK]
+[INFO] Preparing file offset table for [${node:root.dir}/es-data/http_logs/documents-221998.json] ... [OK]
+[INFO] Downloading data for track http_logs (58.2 MB total size)                  [100.0%]
+[INFO] Decompressing track data from [${node:root.dir}/es-data/http_logs/documents-231998.json.bz2] to [${node:root.dir}/es-data/http_logs/documents-231998.json] (resulting size: 1.49 GB) ... [OK]
+[INFO] Preparing file offset table for [${node:root.dir}/es-data/http_logs/documents-231998.json] ... [OK]
+[INFO] Downloading data for track http_logs (865.3 MB total size)                 [100.0%]
+[INFO] Decompressing track data from [${node:root.dir}/es-data/http_logs/documents-241998.json.bz2] to [${node:root.dir}/es-data/http_logs/documents-241998.json] (resulting size: 22.87 GB) ... [OK]
+[INFO] Preparing file offset table for [${node:root.dir}/es-data/http_logs/documents-241998.json] ... [OK]
+Running delete-index                                                           [100% done]
+Running create-index                                                           [100% done]
+Running check-cluster-health                                                   [100% done]
+Running index-append                                                           [100% done]
+Running refresh-after-index                                                    [100% done]
+Running force-merge                                                            [100% done]
+Running refresh-after-force-merge                                              [100% done]
+Running wait-until-merges-finish                                               [100% done]
+Running default                                                                [100% done]
+Running term                                                                   [100% done]
+Running range                                                                  [100% done]
+Running hourly_agg                                                             [100% done]
+Running scroll                                                                 [100% done][INFO] Racing on track [http_logs], challenge [append-no-conflicts] and car ['external'] with version [6.7.0].
+
+
+------------------------------------------------------
+    _______             __   _____
+   / ____(_)___  ____ _/ /  / ___/_________  ________
+  / /_  / / __ \/ __ `/ /   \__ \/ ___/ __ \/ ___/ _ \
+ / __/ / / / / / /_/ / /   ___/ / /__/ /_/ / /  /  __/
+/_/   /_/_/ /_/\__,_/_/   /____/\___/\____/_/   \___/
+------------------------------------------------------
+            
+Metric,Task,Value,Unit
+Cumulative indexing time of primary shards,,265.19325,min
+Min cumulative indexing time across primary shards,,0.5920500000000001,min
+Median cumulative indexing time across primary shards,,2.3655166666666667,min
+Max cumulative indexing time across primary shards,,43.22265,min
+Cumulative indexing throttle time of primary shards,,0,min
+Min cumulative indexing throttle time across primary shards,,0,min
+Median cumulative indexing throttle time across primary shards,,0,min
+Max cumulative indexing throttle time across primary shards,,0,min
+Cumulative merge time of primary shards,,115.32418333333334,min
+Cumulative merge count of primary shards,,3520,
+Min cumulative merge time across primary shards,,0.08555,min
+Median cumulative merge time across primary shards,,0.4316333333333333,min
+Max cumulative merge time across primary shards,,21.39561666666667,min
+Cumulative merge throttle time of primary shards,,55.43281666666667,min
+Min cumulative merge throttle time across primary shards,,0,min
+Median cumulative merge throttle time across primary shards,,0.05455,min
+Max cumulative merge throttle time across primary shards,,11.272316666666667,min
+Cumulative refresh time of primary shards,,10.989716666666668,min
+Cumulative refresh count of primary shards,,4886,
+Min cumulative refresh time across primary shards,,0.042383333333333335,min
+Median cumulative refresh time across primary shards,,0.10013333333333334,min
+Max cumulative refresh time across primary shards,,1.7574666666666665,min
+Cumulative flush time of primary shards,,3.6248,min
+Cumulative flush count of primary shards,,110,
+Min cumulative flush time across primary shards,,0.0007,min
+Median cumulative flush time across primary shards,,0.0011833333333333333,min
+Max cumulative flush time across primary shards,,0.7655166666666666,min
+Total Young Gen GC,,237.776,s
+Total Old Gen GC,,1.746,s
+Store size,,21.082223309203982,GB
+Translog size,,14.746516151353717,GB
+Heap used for segments,,111.62905502319336,MB
+Heap used for doc values,,0.09706497192382812,MB
+Heap used for terms,,98.27819156646729,MB
+Heap used for norms,,0.03558349609375,MB
+Heap used for points,,5.77750301361084,MB
+Heap used for stored fields,,7.440711975097656,MB
+Segment count,,583,
+Min Throughput,index-append,229145.52,docs/s
+Median Throughput,index-append,238065.44,docs/s
+Max Throughput,index-append,250330.96,docs/s
+50th percentile latency,index-append,140.421428000991,ms
+90th percentile latency,index-append,233.7923650011362,ms
+99th percentile latency,index-append,640.6018092511658,ms
+99.9th percentile latency,index-append,1494.5742425015312,ms
+99.99th percentile latency,index-append,2033.3224122082718,ms
+100th percentile latency,index-append,2587.897716999578,ms
+50th percentile service time,index-append,140.421428000991,ms
+90th percentile service time,index-append,233.7923650011362,ms
+99th percentile service time,index-append,640.6018092511658,ms
+99.9th percentile service time,index-append,1494.5742425015312,ms
+99.99th percentile service time,index-append,2033.3224122082718,ms
+100th percentile service time,index-append,2587.897716999578,ms
+error rate,index-append,0.00,%
+Min Throughput,default,7.99,ops/s
+Median Throughput,default,8.00,ops/s
+Max Throughput,default,8.00,ops/s
+50th percentile latency,default,112.05961700034095,ms
+90th percentile latency,default,170.3844265997759,ms
+99th percentile latency,default,217.2263318013211,ms
+100th percentile latency,default,225.40895900237956,ms
+50th percentile service time,default,110.13172599996324,ms
+90th percentile service time,default,123.62041029882677,ms
+99th percentile service time,default,186.2428785085651,ms
+100th percentile service time,default,224.76798700154177,ms
+error rate,default,0.00,%
+Min Throughput,term,50.06,ops/s
+Median Throughput,term,50.06,ops/s
+Max Throughput,term,50.06,ops/s
+50th percentile latency,term,7.225672499771463,ms
+90th percentile latency,term,8.090032799373148,ms
+99th percentile latency,term,19.6071529987603,ms
+100th percentile latency,term,22.252630998991663,ms
+50th percentile service time,term,5.8988165019400185,ms
+90th percentile service time,term,6.421299197972986,ms
+99th percentile service time,term,19.318181427006504,ms
+100th percentile service time,term,21.226647000730736,ms
+error rate,term,0.00,%
+Min Throughput,range,1.00,ops/s
+Median Throughput,range,1.00,ops/s
+Max Throughput,range,1.00,ops/s
+50th percentile latency,range,598.2397120005771,ms
+90th percentile latency,range,608.8633192997804,ms
+99th percentile latency,range,635.9494537622596,ms
+100th percentile latency,range,664.5764679997228,ms
+50th percentile service time,range,596.7943119994743,ms
+90th percentile service time,range,607.1344168998621,ms
+99th percentile service time,range,634.6935107610626,ms
+100th percentile service time,range,662.859481999476,ms
+error rate,range,0.00,%
+Min Throughput,hourly_agg,0.20,ops/s
+Median Throughput,hourly_agg,0.20,ops/s
+Max Throughput,hourly_agg,0.20,ops/s
+50th percentile latency,hourly_agg,1910.3509654978552,ms
+90th percentile latency,hourly_agg,1957.625729999927,ms
+99th percentile latency,hourly_agg,1998.5429364480296,ms
+100th percentile latency,hourly_agg,2000.9772919984243,ms
+50th percentile service time,hourly_agg,1906.0790829989855,ms
+90th percentile service time,hourly_agg,1953.4841074004362,ms
+99th percentile service time,hourly_agg,1994.4995787394873,ms
+100th percentile service time,hourly_agg,1996.8558520013175,ms
+error rate,hourly_agg,0.00,%
+Min Throughput,scroll,5.95,pages/s
+Median Throughput,scroll,5.95,pages/s
+Max Throughput,scroll,5.96,pages/s
+50th percentile latency,scroll,642249.3769329995,ms
+90th percentile latency,scroll,896964.6255516978,ms
+99th percentile latency,scroll,954022.5181998375,ms
+100th percentile latency,scroll,960365.3234499979,ms
+50th percentile service time,scroll,4197.587886499605,ms
+90th percentile service time,scroll,4226.793061997887,ms
+99th percentile service time,scroll,4240.034555868078,ms
+100th percentile service time,scroll,4243.505984999501,ms
+error rate,scroll,0.00,%
+
+
+
+----------------------------------
+[INFO] SUCCESS (took 3938 seconds)
+----------------------------------

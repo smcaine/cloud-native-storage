@@ -1,0 +1,108 @@
+apiVersion: v1
+kind: List
+items:
+- apiVersion: cluster.k8s.io/v1alpha1
+  kind: Machine
+  metadata:
+    name: master-1
+    namespace: weavek8sops
+    labels:
+      set: master
+  spec:
+    versions:
+      kubelet: 1.16.11
+      control_plane: 1.16.11
+    providerSpec:
+      value:
+        apiVersion: baremetalproviderspec/v1alpha1
+        kind: BareMetalMachineProviderSpec
+        public:
+          address: <public ip>
+          port: 22
+        private:
+          address: <private ip>
+          port: 22
+- apiVersion: cluster.k8s.io/v1alpha1
+  kind: Machine
+  metadata:
+    name: worker-1
+    namespace: weavek8sops
+    labels:
+      set: worker
+  spec:
+    versions:
+      kubelet: 1.16.11
+      control_plane: 1.16.11
+    providerSpec:
+      value:
+        apiVersion: baremetalproviderspec/v1alpha1
+        kind: BareMetalMachineProviderSpec
+        public:
+          address: <public ip>
+          port: 22
+        private:
+          address: <private ip>
+          port: 22
+- apiVersion: cluster.k8s.io/v1alpha1
+  kind: Machine
+  metadata:
+    name: worker-2
+    namespace: weavek8sops
+    labels:
+      set: worker
+  spec:
+    versions:
+      kubelet: 1.16.11
+      control_plane: 1.16.11
+    providerSpec:
+      value:
+        apiVersion: baremetalproviderspec/v1alpha1
+        kind: BareMetalMachineProviderSpec
+        public:
+          address: <public ip>
+          port: 22
+        private:
+          address: <private ip>
+          port: 22
+- apiVersion: cluster.k8s.io/v1alpha1
+  kind: Machine
+  metadata:
+    name: worker-3
+    namespace: weavek8sops
+    labels:
+      set: worker
+  spec:
+    versions:
+      kubelet: 1.16.11
+      control_plane: 1.16.11
+    providerSpec:
+      value:
+        apiVersion: baremetalproviderspec/v1alpha1
+        kind: BareMetalMachineProviderSpec
+        public:
+          address: <public ip>
+          port: 22
+        private:
+          address: <private ip>
+          port: 22
+# - apiVersion: cluster.k8s.io/v1alpha1
+#   kind: Machine
+#   metadata:
+#     name: worker-4
+#     namespace: weavek8sops
+#     labels:
+#       set: worker
+#   spec:
+#     versions:
+#       kubelet: 1.16.11
+#       control_plane: 1.16.11
+#     providerSpec:
+#       value:
+#         apiVersion: baremetalproviderspec/v1alpha1
+#         kind: BareMetalMachineProviderSpec
+#         public:
+#           address: <public ip>
+#           port: 22
+#         private:
+#           address: <private ip>
+#           port: 22
