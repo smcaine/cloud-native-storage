@@ -1,0 +1,82 @@
+root@kafka-test-client:/# kafka-consumer-perf-test --broker-list my-kafka:9092 --messages 60000000 --threads 4 --topic test-rep-three --print-metrics
+start.time, end.time, data.consumed.in.MB, MB.sec, data.consumed.in.nMsg, nMsg.sec, rebalance.time.ms, fetch.time.ms, fetch.MB.sec, fetch.nMsg.sec
+2020-06-23 20:59:57:292, 2020-06-23 21:01:16:684, 5722.0459, 72.0733, 60000000, 755743.6518, 3042, 76350, 74.9449, 785854.6169
+
+Metric Name                                                                                                 Value
+consumer-coordinator-metrics:assigned-partitions:{client-id=consumer-1}                                   : 6.000
+consumer-coordinator-metrics:commit-latency-avg:{client-id=consumer-1}                                    : 25.300
+consumer-coordinator-metrics:commit-latency-max:{client-id=consumer-1}                                    : 151.000
+consumer-coordinator-metrics:commit-rate:{client-id=consumer-1}                                           : 0.243
+consumer-coordinator-metrics:commit-total:{client-id=consumer-1}                                          : 16.000
+consumer-coordinator-metrics:heartbeat-rate:{client-id=consumer-1}                                        : 0.350
+consumer-coordinator-metrics:heartbeat-response-time-max:{client-id=consumer-1}                           : 1.000
+consumer-coordinator-metrics:heartbeat-total:{client-id=consumer-1}                                       : 25.000
+consumer-coordinator-metrics:join-rate:{client-id=consumer-1}                                             : 0.000
+consumer-coordinator-metrics:join-time-avg:{client-id=consumer-1}                                         : 0.000
+consumer-coordinator-metrics:join-time-max:{client-id=consumer-1}                                         : -Infinity
+consumer-coordinator-metrics:join-total:{client-id=consumer-1}                                            : 1.000
+consumer-coordinator-metrics:last-heartbeat-seconds-ago:{client-id=consumer-1}                            : 0.000
+consumer-coordinator-metrics:sync-rate:{client-id=consumer-1}                                             : 0.000
+consumer-coordinator-metrics:sync-time-avg:{client-id=consumer-1}                                         : 0.000
+consumer-coordinator-metrics:sync-time-max:{client-id=consumer-1}                                         : -Infinity
+consumer-coordinator-metrics:sync-total:{client-id=consumer-1}                                            : 1.000
+consumer-fetch-manager-metrics:bytes-consumed-rate:{client-id=consumer-1, topic=test-rep-three}           : 87779021.012
+consumer-fetch-manager-metrics:bytes-consumed-rate:{client-id=consumer-1}                                 : 87779021.012
+consumer-fetch-manager-metrics:bytes-consumed-total:{client-id=consumer-1, topic=test-rep-three}          : 6545864821.000
+consumer-fetch-manager-metrics:bytes-consumed-total:{client-id=consumer-1}                                : 6545864821.000
+consumer-fetch-manager-metrics:fetch-latency-avg:{client-id=consumer-1}                                   : 17.424
+consumer-fetch-manager-metrics:fetch-latency-max:{client-id=consumer-1}                                   : 546.000
+consumer-fetch-manager-metrics:fetch-rate:{client-id=consumer-1}                                          : 84.837
+consumer-fetch-manager-metrics:fetch-size-avg:{client-id=consumer-1, topic=test-rep-three}                : 1033165.812
+consumer-fetch-manager-metrics:fetch-size-avg:{client-id=consumer-1}                                      : 1033165.812
+consumer-fetch-manager-metrics:fetch-size-max:{client-id=consumer-1, topic=test-rep-three}                : 2071251.000
+consumer-fetch-manager-metrics:fetch-size-max:{client-id=consumer-1}                                      : 2071251.000
+consumer-fetch-manager-metrics:fetch-throttle-time-avg:{client-id=consumer-1}                             : 0.000
+consumer-fetch-manager-metrics:fetch-throttle-time-max:{client-id=consumer-1}                             : 0.000
+consumer-fetch-manager-metrics:fetch-total:{client-id=consumer-1}                                         : 6329.000
+consumer-fetch-manager-metrics:records-consumed-rate:{client-id=consumer-1, topic=test-rep-three}         : 804607.288
+consumer-fetch-manager-metrics:records-consumed-rate:{client-id=consumer-1}                               : 804607.288
+consumer-fetch-manager-metrics:records-consumed-total:{client-id=consumer-1, topic=test-rep-three}        : 60000000.000
+consumer-fetch-manager-metrics:records-consumed-total:{client-id=consumer-1}                              : 60000000.000
+consumer-fetch-manager-metrics:records-lag-avg:{client-id=consumer-1, topic=test-rep-three, partition=0}  : 3025437.460
+consumer-fetch-manager-metrics:records-lag-avg:{client-id=consumer-1, topic=test-rep-three, partition=1}  : 3113650.925
+consumer-fetch-manager-metrics:records-lag-avg:{client-id=consumer-1, topic=test-rep-three, partition=2}  : 3092445.927
+consumer-fetch-manager-metrics:records-lag-avg:{client-id=consumer-1, topic=test-rep-three, partition=3}  : 3031578.626
+consumer-fetch-manager-metrics:records-lag-avg:{client-id=consumer-1, topic=test-rep-three, partition=4}  : 3119881.882
+consumer-fetch-manager-metrics:records-lag-avg:{client-id=consumer-1, topic=test-rep-three, partition=5}  : 3100012.432
+consumer-fetch-manager-metrics:records-lag-max:{client-id=consumer-1, topic=test-rep-three, partition=0}  : 6052771.000
+consumer-fetch-manager-metrics:records-lag-max:{client-id=consumer-1, topic=test-rep-three, partition=1}  : 6223542.000
+consumer-fetch-manager-metrics:records-lag-max:{client-id=consumer-1, topic=test-rep-three, partition=2}  : 6185603.000
+consumer-fetch-manager-metrics:records-lag-max:{client-id=consumer-1, topic=test-rep-three, partition=3}  : 6062285.000
+consumer-fetch-manager-metrics:records-lag-max:{client-id=consumer-1, topic=test-rep-three, partition=4}  : 6233009.000
+consumer-fetch-manager-metrics:records-lag-max:{client-id=consumer-1, topic=test-rep-three, partition=5}  : 6201667.000
+consumer-fetch-manager-metrics:records-lag-max:{client-id=consumer-1}                                     : 6252022.000
+consumer-fetch-manager-metrics:records-lag:{client-id=consumer-1, topic=test-rep-three, partition=0}      : 0.000
+consumer-fetch-manager-metrics:records-lag:{client-id=consumer-1, topic=test-rep-three, partition=1}      : 0.000
+consumer-fetch-manager-metrics:records-lag:{client-id=consumer-1, topic=test-rep-three, partition=2}      : 0.000
+consumer-fetch-manager-metrics:records-lag:{client-id=consumer-1, topic=test-rep-three, partition=3}      : 0.000
+consumer-fetch-manager-metrics:records-lag:{client-id=consumer-1, topic=test-rep-three, partition=4}      : 0.000
+consumer-fetch-manager-metrics:records-lag:{client-id=consumer-1, topic=test-rep-three, partition=5}      : 0.000
+consumer-fetch-manager-metrics:records-lead-avg:{client-id=consumer-1, topic=test-rep-three, partition=0} : 6974562.540
+consumer-fetch-manager-metrics:records-lead-avg:{client-id=consumer-1, topic=test-rep-three, partition=1} : 6886349.075
+consumer-fetch-manager-metrics:records-lead-avg:{client-id=consumer-1, topic=test-rep-three, partition=2} : 6907554.073
+consumer-fetch-manager-metrics:records-lead-avg:{client-id=consumer-1, topic=test-rep-three, partition=3} : 6968421.374
+consumer-fetch-manager-metrics:records-lead-avg:{client-id=consumer-1, topic=test-rep-three, partition=4} : 6880118.118
+consumer-fetch-manager-metrics:records-lead-avg:{client-id=consumer-1, topic=test-rep-three, partition=5} : 6899987.568
+consumer-fetch-manager-metrics:records-lead-min:{client-id=consumer-1, topic=test-rep-three, partition=0} : 3947229.000
+consumer-fetch-manager-metrics:records-lead-min:{client-id=consumer-1, topic=test-rep-three, partition=1} : 3776458.000
+consumer-fetch-manager-metrics:records-lead-min:{client-id=consumer-1, topic=test-rep-three, partition=2} : 3814397.000
+consumer-fetch-manager-metrics:records-lead-min:{client-id=consumer-1, topic=test-rep-three, partition=3} : 3937715.000
+consumer-fetch-manager-metrics:records-lead-min:{client-id=consumer-1, topic=test-rep-three, partition=4} : 3766991.000
+consumer-fetch-manager-metrics:records-lead-min:{client-id=consumer-1, topic=test-rep-three, partition=5} : 3798333.000
+consumer-fetch-manager-metrics:records-lead-min:{client-id=consumer-1}                                    : 3747978.000
+consumer-fetch-manager-metrics:records-lead:{client-id=consumer-1, topic=test-rep-three, partition=0}     : 10000000.000
+consumer-fetch-manager-metrics:records-lead:{client-id=consumer-1, topic=test-rep-three, partition=1}     : 10000000.000
+consumer-fetch-manager-metrics:records-lead:{client-id=consumer-1, topic=test-rep-three, partition=2}     : 10000000.000
+consumer-fetch-manager-metrics:records-lead:{client-id=consumer-1, topic=test-rep-three, partition=3}     : 10000000.000
+consumer-fetch-manager-metrics:records-lead:{client-id=consumer-1, topic=test-rep-three, partition=4}     : 10000000.000
+consumer-fetch-manager-metrics:records-lead:{client-id=consumer-1, topic=test-rep-three, partition=5}     : 10000000.000
+consumer-fetch-manager-metrics:records-per-request-avg:{client-id=consumer-1, topic=test-rep-three}       : 9470.290
+consumer-fetch-manager-metrics:records-per-request-avg:{client-id=consumer-1}                             : 9470.290
+kafka-metrics-count:count:{client-id=consumer-1}                                                          : 76.000
+root@kafka-test-client:/# 

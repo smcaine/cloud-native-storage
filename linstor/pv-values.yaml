@@ -1,0 +1,7 @@
+path: /var/lib/linstor-etcd
+size: 2Gi
+nodes:
+- sclsworker01
+- sclsworker02
+- sclsworker03
+# - sclsworker04

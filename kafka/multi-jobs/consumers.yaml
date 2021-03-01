@@ -1,0 +1,115 @@
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: test-consumer-1
+  namespace: kafka
+spec:
+  template:
+    metadata:
+      labels:
+        app: kafka-consumer
+    spec:
+      containers:
+      - name: consumer
+        command: ["kafka-consumer-perf-test"]
+        args:
+          - --broker-list=my-kafka:9092
+          - --messages=600000
+          - --threads=4
+          - --topic=test-rep-one
+          - --print-metrics
+        image: confluentinc/cp-kafka:5.0.1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: test-consumer-2
+  namespace: kafka
+spec:
+  template:
+    metadata:
+      labels:
+        app: kafka-consumer
+    spec:
+      containers:
+      - name: consumer
+        command: ["kafka-consumer-perf-test"]
+        args:
+          - --broker-list=my-kafka:9092
+          - --messages=60000000
+          - --threads=4
+          - --topic=test-rep-two
+          - --print-metrics
+        image: confluentinc/cp-kafka:5.0.1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: test-consumer-3
+  namespace: kafka
+spec:
+  template:
+    metadata:
+      labels:
+        app: kafka-consumer
+    spec:
+      containers:
+      - name: consumer
+        command: ["kafka-consumer-perf-test"]
+        args:
+          - --broker-list=my-kafka:9092
+          - --messages=60000000
+          - --threads=4
+          - --topic=test-rep-three
+          - --print-metrics
+        image: confluentinc/cp-kafka:5.0.1
+      restartPolicy: Never
+# ---
+# apiVersion: batch/v1
+# kind: Job
+# metadata:
+#   name: test-consumer-4
+#   namespace: kafka
+# spec:
+#   template:
+#     metadata:
+#       labels:
+#         app: kafka-consumer
+#     spec:
+#       containers:
+#       - name: consumer
+#         command: ["kafka-consumer-perf-test"]
+#         args:
+#           - --broker-list=my-kafka:9092
+#           - --messages=60000000
+#           - --threads=4
+#           - --topic test-rep-four
+#           - --print-metrics
+#         image: confluentinc/cp-kafka:5.0.1
+#       restartPolicy: Never
+# ---
+# apiVersion: batch/v1
+# kind: Job
+# metadata:
+#   name: test-consumer-5
+#   namespace: kafka
+# spec:
+#   template:
+#     metadata:
+#       labels:
+#         app: kafka-consumer
+#     spec:
+#       containers:
+#       - name: consumer
+#         command: ["kafka-consumer-perf-test"]
+#         args:
+#           - --broker-list=my-kafka:9092
+#           - --messages=60000000
+#           - --threads=4
+#           - --topic test-rep-five
+#           - --print-metrics
+#         image: confluentinc/cp-kafka:5.0.1
+#       restartPolicy: Never

@@ -1,0 +1,45 @@
+kubectl exec -it pgbench -- bash          
+bash-4.2$ /opt/cpm/bin/start.sh
+NOTICE:  table "pgbench_history" does not exist, skipping
+NOTICE:  table "pgbench_tellers" does not exist, skipping
+NOTICE:  table "pgbench_accounts" does not exist, skipping
+NOTICE:  table "pgbench_branches" does not exist, skipping
+creating tables...
+2977000 of 40000000 tuples (7%) done (elapsed 5.02 s, remaining 62.43 s)
+5848500 of 40000000 tuples (14%) done (elapsed 10.14 s, remaining 59.19 s)
+7187200 of 40000000 tuples (17%) done (elapsed 15.02 s, remaining 68.59 s)
+9802600 of 40000000 tuples (24%) done (elapsed 21.35 s, remaining 65.78 s)
+11917300 of 40000000 tuples (29%) done (elapsed 25.01 s, remaining 58.93 s)
+13727800 of 40000000 tuples (34%) done (elapsed 30.04 s, remaining 57.49 s)
+16591500 of 40000000 tuples (41%) done (elapsed 35.00 s, remaining 49.39 s)
+18417500 of 40000000 tuples (46%) done (elapsed 40.00 s, remaining 46.88 s)
+21337000 of 40000000 tuples (53%) done (elapsed 45.01 s, remaining 39.37 s)
+23101000 of 40000000 tuples (57%) done (elapsed 50.00 s, remaining 36.58 s)
+25448600 of 40000000 tuples (63%) done (elapsed 55.97 s, remaining 32.00 s)
+27784100 of 40000000 tuples (69%) done (elapsed 60.06 s, remaining 26.41 s)
+29597600 of 40000000 tuples (73%) done (elapsed 65.02 s, remaining 22.85 s)
+32443000 of 40000000 tuples (81%) done (elapsed 70.06 s, remaining 16.32 s)
+34281100 of 40000000 tuples (85%) done (elapsed 75.05 s, remaining 12.52 s)
+37098800 of 40000000 tuples (92%) done (elapsed 80.00 s, remaining 6.26 s)
+38936900 of 40000000 tuples (97%) done (elapsed 85.03 s, remaining 2.32 s)
+40000000 of 40000000 tuples (100%) done (elapsed 86.88 s, remaining 0.00 s)
+vacuum...
+set primary keys...
+done.
+scale option ignored, using count from pgbench_branches table (400)
+starting vacuum...end.
+connection to database "userdb" failed:
+FATAL:  remaining connection slots are reserved for non-replication superuser connections
+connection to database "userdb" failed:
+FATAL:  remaining connection slots are reserved for non-replication superuser connections
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 400
+query mode: simple
+number of clients: 100
+number of threads: 4
+number of transactions per client: 10000
+number of transactions actually processed: 500000/1000000
+latency average = 32.508 ms
+tps = 3076.181516 (including connections establishing)
+tps = 3076.210068 (excluding connections establishing)
+bash-4.2$

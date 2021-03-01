@@ -1,0 +1,7 @@
+#!/bin/bash
+yum install iscsi-initiator-utils -y
+mkfs.ext4 /dev/sda -F
+mkdir -p /var/lib/longhorn
+mount /dev/sda /var/lib/longhorn
+FS_UUID=$(lsblk -no UUID /dev/sda)
+echo "UUID=$FS_UUID       /var/lib/longhorn    ext4    defaults,nofail        0       2" | sudo tee -a /etc/fstab

@@ -1,0 +1,9 @@
+image: schaga/esrally:1.0.3
+track: nyc_taxis
+targetHosts: "elasticsearch.elasticsearch:9200"
+pipeline: benchmark-only
+challenge: append-no-conflicts
+volClaimName: nyc-pvc
+dataDir: /esrally-data
+reportFile: report-nyc.csv
+storageSize: 200Gi

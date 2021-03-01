@@ -1,0 +1,51 @@
+kubectl exec -it pgbench -- bash
+bash-4.2$ /opt/cpm/bin/start.sh
+connection to database "userdb" failed:
+could not connect to server: Connection refused
+	Is the server running on host "postgres-0.postgres" (172.30.160.12) and accepting
+	TCP/IP connections on port 5432?
+bash-4.2$ /opt/cpm/bin/start.sh
+NOTICE:  table "pgbench_history" does not exist, skipping
+NOTICE:  table "pgbench_tellers" does not exist, skipping
+NOTICE:  table "pgbench_accounts" does not exist, skipping
+NOTICE:  table "pgbench_branches" does not exist, skipping
+creating tables...
+2327200 of 40000000 tuples (5%) done (elapsed 5.01 s, remaining 81.02 s)
+4642500 of 40000000 tuples (11%) done (elapsed 10.11 s, remaining 76.98 s)
+5926100 of 40000000 tuples (14%) done (elapsed 16.29 s, remaining 93.64 s)
+7648800 of 40000000 tuples (19%) done (elapsed 20.00 s, remaining 84.59 s)
+9835800 of 40000000 tuples (24%) done (elapsed 26.96 s, remaining 82.67 s)
+11230800 of 40000000 tuples (28%) done (elapsed 30.06 s, remaining 76.99 s)
+13572500 of 40000000 tuples (33%) done (elapsed 35.15 s, remaining 68.44 s)
+14826700 of 40000000 tuples (37%) done (elapsed 40.04 s, remaining 67.99 s)
+17156300 of 40000000 tuples (42%) done (elapsed 45.01 s, remaining 59.93 s)
+18416700 of 40000000 tuples (46%) done (elapsed 50.10 s, remaining 58.71 s)
+20702700 of 40000000 tuples (51%) done (elapsed 55.05 s, remaining 51.32 s)
+22055900 of 40000000 tuples (55%) done (elapsed 60.00 s, remaining 48.82 s)
+24326700 of 40000000 tuples (60%) done (elapsed 65.03 s, remaining 41.90 s)
+25577700 of 40000000 tuples (63%) done (elapsed 70.06 s, remaining 39.51 s)
+27916300 of 40000000 tuples (69%) done (elapsed 75.17 s, remaining 32.54 s)
+29325000 of 40000000 tuples (73%) done (elapsed 80.34 s, remaining 29.24 s)
+31543000 of 40000000 tuples (78%) done (elapsed 85.18 s, remaining 22.84 s)
+33257900 of 40000000 tuples (83%) done (elapsed 91.02 s, remaining 18.45 s)
+35133100 of 40000000 tuples (87%) done (elapsed 95.03 s, remaining 13.16 s)
+37131900 of 40000000 tuples (92%) done (elapsed 101.50 s, remaining 7.84 s)
+38765700 of 40000000 tuples (96%) done (elapsed 105.00 s, remaining 3.34 s)
+40000000 of 40000000 tuples (100%) done (elapsed 107.75 s, remaining 0.00 s)
+vacuum...
+set primary keys...
+done.
+scale option ignored, using count from pgbench_branches table (400)
+starting vacuum...end.
+connection to database "userdb" failed:
+FATAL:  remaining connection slots are reserved for non-replication superuser connections
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 400
+query mode: simple
+number of clients: 100
+number of threads: 4
+number of transactions per client: 10000
+number of transactions actually processed: 750000/1000000
+latency average = 39.710 ms
+tps = 2518.227768 (including connections establishing)
+tps = 2518.247208 (excluding connections establishing)

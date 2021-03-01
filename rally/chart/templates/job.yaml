@@ -1,0 +1,59 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ .Values.volClaimName }}
+spec:
+  storageClassName: "fast"
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.storageSize }}
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ template "fullname" . }}
+spec:
+  template:
+    metadata:
+      labels:
+        app: {{ template "fullname" . }}
+    spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+      containers:
+      - name: esrally
+        args:
+          - --track={{ .Values.track }}
+          - --target-hosts={{ .Values.targetHosts }}
+          {{- if .Values.pipeline }}
+          - --pipeline={{ .Values.pipeline }}
+          {{ end}}
+          - --challenge={{ .Values.challenge }}
+          {{- if .Values.includeTasks }}
+          - --include-tasks={{ .Values.includeTasks }}
+          {{ end}}
+          {{- if and .Values.dataDir .Values.reportFile }}
+          - --report-file={{ .Values.dataDir }}/{{ .Values.reportFile }}
+          - --report-format=csv
+          {{ end}}
+        image: {{ .Values.image }}
+      {{- if .Values.dataDir }}
+        resources:
+          # limits:
+          #   memory: 4Gi
+          requests:
+            memory: 2Gi
+            cpu: "2"
+        volumeMounts:
+        - name: esrally-data
+          mountPath: {{ .Values.dataDir }}
+      restartPolicy: Never
+      volumes:
+      - name: esrally-data
+        persistentVolumeClaim:
+          claimName: {{ .Values.volClaimName }}
+      {{ end }}

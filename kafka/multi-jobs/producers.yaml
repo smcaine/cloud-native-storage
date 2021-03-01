@@ -1,0 +1,135 @@
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: test-producer-1
+  namespace: kafka
+spec:
+  template:
+    metadata:
+      labels:
+        app: kafka-producer
+    spec:
+      containers:
+      - name: producer
+        command: ["kafka-run-class", "org.apache.kafka.tools.ProducerPerformance"]
+        args:
+          - --print-metrics
+          - --topic=test-rep-one
+          - --num-records=600000
+          - --throughput=-1
+          - --record-size=1000
+          - --producer-props
+          - bootstrap.servers=my-kafka:9092
+          - buffer.memory=67108864
+          - batch.size=819600
+        image: confluentinc/cp-kafka:5.0.1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: test-producer-2
+  namespace: kafka
+spec:
+  template:
+    metadata:
+      labels:
+        app: kafka-producer
+    spec:
+      containers:
+      - name: producer
+        command: ["kafka-run-class", "org.apache.kafka.tools.ProducerPerformance"]
+        args:
+          - --print-metrics
+          - --topic=test-rep-two
+          - --num-records=60000000
+          - --throughput=-1
+          - --record-size=100
+          - --producer-props
+          - bootstrap.servers=my-kafka:9092
+          - buffer.memory=67108864
+          - batch.size=8196
+        image: confluentinc/cp-kafka:5.0.1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: test-producer-3
+  namespace: kafka
+spec:
+  template:
+    metadata:
+      labels:
+        app: kafka-producer
+    spec:
+      containers:
+      - name: producer
+        command: ["kafka-run-class", "org.apache.kafka.tools.ProducerPerformance"]
+        args:
+          - --print-metrics
+          - --topic=test-rep-three
+          - --num-records=60000000
+          - --throughput=-1
+          - --record-size=100
+          - --producer-props
+          - bootstrap.servers=my-kafka:9092
+          - buffer.memory=67108864
+          - batch.size=8196
+        image: confluentinc/cp-kafka:5.0.1
+      restartPolicy: Never
+# ---
+# apiVersion: batch/v1
+# kind: Job
+# metadata:
+#   name: test-producer-4
+#   namespace: kafka
+# spec:
+#   template:
+#     metadata:
+#       labels:
+#         app: kafka-producer
+#     spec:
+#       containers:
+#       - name: producer
+#         command: ["kafka-run-class", "org.apache.kafka.tools.ProducerPerformance"]
+#         args:
+#           - --print-metrics
+#           - --topic=test-rep-four
+#           - --num-records=60000000
+#           - --throughput=-1
+#           - --record-size=100
+#           - --producer-props
+#           - bootstrap.servers=my-kafka:9092
+#           - buffer.memory=67108864
+#           - batch.size=8196
+#         image: confluentinc/cp-kafka:5.0.1
+#       restartPolicy: Never
+# ---
+# apiVersion: batch/v1
+# kind: Job
+# metadata:
+#   name: test-producer-5
+#   namespace: kafka
+# spec:
+#   template:
+#     metadata:
+#       labels:
+#         app: kafka-producer
+#     spec:
+#       containers:
+#       - name: producer
+#         command: ["kafka-run-class", "org.apache.kafka.tools.ProducerPerformance"]
+#         args:
+#           - --print-metrics
+#           - --topic=test-rep-five
+#           - --num-records=60000000
+#           - --throughput=100000000
+#           - --record-size=100
+#           - --producer-props
+#           - bootstrap.servers=my-kafka:9092
+#           - buffer.memory=67108864
+#           - batch.size=8196
+#         image: confluentinc/cp-kafka:5.0.1
+#       restartPolicy: Never

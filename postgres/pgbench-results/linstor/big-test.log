@@ -1,0 +1,40 @@
+kubectl exec -it pgbench -- bash -c '/opt/cpm/bin/start.sh'
+NOTICE:  table "pgbench_history" does not exist, skipping
+NOTICE:  table "pgbench_tellers" does not exist, skipping
+NOTICE:  table "pgbench_accounts" does not exist, skipping
+NOTICE:  table "pgbench_branches" does not exist, skipping
+creating tables...
+2988600 of 40000000 tuples (7%) done (elapsed 5.01 s, remaining 62.01 s)
+5884300 of 40000000 tuples (14%) done (elapsed 12.34 s, remaining 71.53 s)
+7478700 of 40000000 tuples (18%) done (elapsed 15.03 s, remaining 65.35 s)
+9814300 of 40000000 tuples (24%) done (elapsed 20.76 s, remaining 63.86 s)
+12310900 of 40000000 tuples (30%) done (elapsed 25.00 s, remaining 56.24 s)
+14346900 of 40000000 tuples (35%) done (elapsed 30.04 s, remaining 53.72 s)
+17252700 of 40000000 tuples (43%) done (elapsed 35.00 s, remaining 46.15 s)
+19200000 of 40000000 tuples (48%) done (elapsed 40.01 s, remaining 43.34 s)
+21464500 of 40000000 tuples (53%) done (elapsed 45.38 s, remaining 39.19 s)
+24155400 of 40000000 tuples (60%) done (elapsed 50.13 s, remaining 32.88 s)
+26061800 of 40000000 tuples (65%) done (elapsed 55.08 s, remaining 29.46 s)
+28959400 of 40000000 tuples (72%) done (elapsed 60.06 s, remaining 22.90 s)
+30961400 of 40000000 tuples (77%) done (elapsed 65.03 s, remaining 18.98 s)
+33244200 of 40000000 tuples (83%) done (elapsed 70.57 s, remaining 14.34 s)
+35862500 of 40000000 tuples (89%) done (elapsed 75.00 s, remaining 8.65 s)
+37863000 of 40000000 tuples (94%) done (elapsed 80.03 s, remaining 4.52 s)
+40000000 of 40000000 tuples (100%) done (elapsed 83.74 s, remaining 0.00 s)
+vacuum...
+set primary keys...
+done.
+scale option ignored, using count from pgbench_branches table (400)
+starting vacuum...end.
+connection to database "userdb" failed:
+FATAL:  remaining connection slots are reserved for non-replication superuser connections
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 400
+query mode: simple
+number of clients: 100
+number of threads: 4
+number of transactions per client: 10000
+number of transactions actually processed: 750000/1000000
+latency average = 18.289 ms
+tps = 5467.655154 (including connections establishing)
+tps = 5467.773729 (excluding connections establishing)

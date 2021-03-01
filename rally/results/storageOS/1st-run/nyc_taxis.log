@@ -1,0 +1,156 @@
+kubectl logs nyc-elasticsearch-rally-lml2w  -f 
+
+    ____        ____
+   / __ \____ _/ / /_  __
+  / /_/ / __ `/ / / / / /
+ / _, _/ /_/ / / / /_/ /
+/_/ |_|\__,_/_/_/\__, /
+                /____/
+
+[INFO] Downloading data for track nyc_taxis (4.5 GB total size)                   [100.0%]
+[INFO] Decompressing track data from [${node:root.dir}/data/nyc_taxis/documents.json.bz2] to [${node:root.dir}/data/nyc_taxis/documents.json] (resulting size: 74.32 GB) ... [OK]
+[INFO] Preparing file offset table for [${node:root.dir}/data/nyc_taxis/documents.json] ... [OK]
+Running delete-index                                                           [100% done]
+Running create-index                                                           [100% done]
+Running check-cluster-health                                                   [100% done]
+Running index                                                                  [100% done]
+Running refresh-after-index                                                    [100% done]
+Running force-merge                                                            [100% done]
+Running refresh-after-force-merge                                              [100% done]
+Running wait-until-merges-finish                                               [100% done]
+Running default                                                                [100% done]
+Running range                                                                  [100% done]
+Running distance_amount_agg                                                    [100% done]
+Running autohisto_agg                                                          [100% done]
+Running date_histogram_agg                                                     [100% done][INFO] Racing on track [nyc_taxis], challenge [append-no-conflicts] and car ['external'] with version [6.7.0].
+
+
+------------------------------------------------------
+    _______             __   _____
+   / ____(_)___  ____ _/ /  / ___/_________  ________
+  / /_  / / __ \/ __ `/ /   \__ \/ ___/ __ \/ ___/ _ \
+ / __/ / / / / / /_/ / /   ___/ / /__/ /_/ / /  /  __/
+/_/   /_/_/ /_/\__,_/_/   /____/\___/\____/_/   \___/
+------------------------------------------------------
+            
+Metric,Task,Value,Unit
+Cumulative indexing time of primary shards,,275.32503333333335,min
+Min cumulative indexing time across primary shards,,275.32503333333335,min
+Median cumulative indexing time across primary shards,,275.32503333333335,min
+Max cumulative indexing time across primary shards,,275.32503333333335,min
+Cumulative indexing throttle time of primary shards,,0,min
+Min cumulative indexing throttle time across primary shards,,0,min
+Median cumulative indexing throttle time across primary shards,,0,min
+Max cumulative indexing throttle time across primary shards,,0,min
+Cumulative merge time of primary shards,,82.80445,min
+Cumulative merge count of primary shards,,137,
+Min cumulative merge time across primary shards,,82.80445,min
+Median cumulative merge time across primary shards,,82.80445,min
+Max cumulative merge time across primary shards,,82.80445,min
+Cumulative merge throttle time of primary shards,,2.945533333333333,min
+Min cumulative merge throttle time across primary shards,,2.945533333333333,min
+Median cumulative merge throttle time across primary shards,,2.945533333333333,min
+Max cumulative merge throttle time across primary shards,,2.945533333333333,min
+Cumulative refresh time of primary shards,,4.2810999999999995,min
+Cumulative refresh count of primary shards,,137,
+Min cumulative refresh time across primary shards,,4.2810999999999995,min
+Median cumulative refresh time across primary shards,,4.2810999999999995,min
+Max cumulative refresh time across primary shards,,4.2810999999999995,min
+Cumulative flush time of primary shards,,2.4709999999999996,min
+Cumulative flush count of primary shards,,22,
+Min cumulative flush time across primary shards,,2.4709999999999996,min
+Median cumulative flush time across primary shards,,2.4709999999999996,min
+Max cumulative flush time across primary shards,,2.4709999999999996,min
+Total Young Gen GC,,453.413,s
+Total Old Gen GC,,18.45,s
+Store size,,25.874351020902395,GB
+Translog size,,0.5355313150212169,GB
+Heap used for segments,,65.76729393005371,MB
+Heap used for doc values,,0.0565185546875,MB
+Heap used for terms,,51.3085880279541,MB
+Heap used for norms,,0,MB
+Heap used for points,,10.28647232055664,MB
+Heap used for stored fields,,4.115715026855469,MB
+Segment count,,36,
+Min Throughput,index,59366.69,docs/s
+Median Throughput,index,60317.69,docs/s
+Max Throughput,index,62360.67,docs/s
+50th percentile latency,index,1140.0183280056808,ms
+90th percentile latency,index,1520.742431996041,ms
+99th percentile latency,index,4688.144050549455,ms
+99.9th percentile latency,index,9369.240874404495,ms
+99.99th percentile latency,index,11634.561074015752,ms
+100th percentile latency,index,13425.76519199065,ms
+50th percentile service time,index,1140.0183280056808,ms
+90th percentile service time,index,1520.742431996041,ms
+99th percentile service time,index,4688.144050549455,ms
+99.9th percentile service time,index,9369.240874404495,ms
+99.99th percentile service time,index,11634.561074015752,ms
+100th percentile service time,index,13425.76519199065,ms
+error rate,index,0.00,%
+Min Throughput,default,2.05,ops/s
+Median Throughput,default,2.05,ops/s
+Max Throughput,default,2.05,ops/s
+50th percentile latency,default,15777.422253835539,ms
+90th percentile latency,default,21888.889062142698,ms
+99th percentile latency,default,23259.1747017701,ms
+100th percentile latency,default,23416.515114324284,ms
+50th percentile service time,default,485.4670260028797,ms
+90th percentile service time,default,489.6407351043308,ms
+99th percentile service time,default,494.77704421602573,ms
+100th percentile service time,default,564.9913300003391,ms
+error rate,default,0.00,%
+Min Throughput,range,0.56,ops/s
+Median Throughput,range,0.56,ops/s
+Max Throughput,range,0.56,ops/s
+50th percentile latency,range,38232.57062464836,ms
+90th percentile latency,range,52808.04710470984,ms
+99th percentile latency,range,56072.104099529824,ms
+100th percentile latency,range,56426.69290286722,ms
+50th percentile service time,range,1795.0419444969157,ms
+90th percentile service time,range,1807.8589546013973,ms
+99th percentile service time,range,1820.6063250315492,ms
+100th percentile service time,range,1826.0571699938737,ms
+error rate,range,0.00,%
+Min Throughput,distance_amount_agg,2.01,ops/s
+Median Throughput,distance_amount_agg,2.02,ops/s
+Max Throughput,distance_amount_agg,2.04,ops/s
+50th percentile latency,distance_amount_agg,5.4753139993408695,ms
+90th percentile latency,distance_amount_agg,6.003573397174478,ms
+99th percentile latency,distance_amount_agg,6.809111486363697,ms
+100th percentile latency,distance_amount_agg,8.004682997125201,ms
+50th percentile service time,distance_amount_agg,3.9823664919822477,ms
+90th percentile service time,distance_amount_agg,4.488402999413665,ms
+99th percentile service time,distance_amount_agg,5.003374444640946,ms
+100th percentile service time,distance_amount_agg,6.146669998997822,ms
+error rate,distance_amount_agg,0.00,%
+Min Throughput,autohisto_agg,1.40,ops/s
+Median Throughput,autohisto_agg,1.41,ops/s
+Max Throughput,autohisto_agg,1.42,ops/s
+50th percentile latency,autohisto_agg,4827.813238167437,ms
+90th percentile latency,autohisto_agg,6099.272899761854,ms
+99th percentile latency,autohisto_agg,6385.479170344042,ms
+100th percentile latency,autohisto_agg,6412.0298826746875,ms
+50th percentile service time,autohisto_agg,697.3633714951575,ms
+90th percentile service time,autohisto_agg,703.4578114064061,ms
+99th percentile service time,autohisto_agg,737.4773427640321,ms
+100th percentile service time,autohisto_agg,740.5840379942674,ms
+error rate,autohisto_agg,0.00,%
+Min Throughput,date_histogram_agg,1.38,ops/s
+Median Throughput,date_histogram_agg,1.39,ops/s
+Max Throughput,date_histogram_agg,1.40,ops/s
+50th percentile latency,date_histogram_agg,5731.169876664353,ms
+90th percentile latency,date_histogram_agg,7366.284104369697,ms
+99th percentile latency,date_histogram_agg,7742.380885344464,ms
+100th percentile latency,date_histogram_agg,7780.508162672049,ms
+50th percentile service time,date_histogram_agg,707.2752230014885,ms
+90th percentile service time,date_histogram_agg,712.4351448044763,ms
+99th percentile service time,date_histogram_agg,730.0262403087982,ms
+100th percentile service time,date_histogram_agg,731.4152410108363,ms
+error rate,date_histogram_agg,0.00,%
+
+
+
+----------------------------------
+[INFO] SUCCESS (took 4536 seconds)
+----------------------------------

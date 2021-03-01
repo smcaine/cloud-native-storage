@@ -1,0 +1,14 @@
+#!/bin/bash
+
+FS=("sda" "sdb" "sdc")
+declare -i c=0
+
+for i in "${FS[@]}"
+do
+  c=$c+1
+  mkfs.ext4 /dev/$i -F
+  mkdir -p /var/lib/storageos/data/dev$c
+  mount /dev/sda /var/lib/storageos/data/dev$c
+  FS_UUID=$(lsblk -no UUID /dev/$i)
+  echo "UUID=$FS_UUID       /var/lib/storageos/data/dev$c    ext4    defaults,nofail        0       2" | sudo tee -a /etc/fstab
+done

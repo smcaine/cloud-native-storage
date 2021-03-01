@@ -1,0 +1,42 @@
+kubectl exec -it pgbench -- bash
+bash-4.2$ /opt/cpm/bin/start.sh
+NOTICE:  table "pgbench_history" does not exist, skipping
+NOTICE:  table "pgbench_tellers" does not exist, skipping
+NOTICE:  table "pgbench_accounts" does not exist, skipping
+NOTICE:  table "pgbench_branches" does not exist, skipping
+creating tables...
+2800600 of 40000000 tuples (7%) done (elapsed 5.01 s, remaining 66.48 s)
+5597100 of 40000000 tuples (13%) done (elapsed 10.12 s, remaining 62.20 s)
+6778900 of 40000000 tuples (16%) done (elapsed 15.02 s, remaining 73.63 s)
+9503400 of 40000000 tuples (23%) done (elapsed 20.06 s, remaining 64.38 s)
+11220600 of 40000000 tuples (28%) done (elapsed 25.05 s, remaining 64.25 s)
+13716500 of 40000000 tuples (34%) done (elapsed 31.59 s, remaining 60.53 s)
+15592000 of 40000000 tuples (38%) done (elapsed 35.06 s, remaining 54.88 s)
+17624800 of 40000000 tuples (44%) done (elapsed 40.83 s, remaining 51.84 s)
+19957200 of 40000000 tuples (49%) done (elapsed 45.00 s, remaining 45.19 s)
+21615900 of 40000000 tuples (54%) done (elapsed 50.00 s, remaining 42.53 s)
+24296400 of 40000000 tuples (60%) done (elapsed 55.00 s, remaining 35.55 s)
+25904200 of 40000000 tuples (64%) done (elapsed 60.08 s, remaining 32.69 s)
+28562200 of 40000000 tuples (71%) done (elapsed 65.00 s, remaining 26.03 s)
+30275600 of 40000000 tuples (75%) done (elapsed 70.05 s, remaining 22.50 s)
+32941500 of 40000000 tuples (82%) done (elapsed 75.01 s, remaining 16.07 s)
+34562300 of 40000000 tuples (86%) done (elapsed 80.00 s, remaining 12.59 s)
+37152200 of 40000000 tuples (92%) done (elapsed 86.77 s, remaining 6.65 s)
+38919300 of 40000000 tuples (97%) done (elapsed 90.04 s, remaining 2.50 s)
+40000000 of 40000000 tuples (100%) done (elapsed 92.02 s, remaining 0.00 s)
+vacuum...
+set primary keys...
+done.
+scale option ignored, using count from pgbench_branches table (400)
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 400
+query mode: simple
+number of clients: 1
+number of threads: 1
+number of transactions per client: 10
+number of transactions actually processed: 10/10
+latency average = 3.286 ms
+tps = 304.345602 (including connections establishing)
+tps = 350.591799 (excluding connections establishing)
+bash-4.2$

@@ -1,0 +1,9 @@
+image: schaga/esrally:1.0.3
+track: http_logs
+targetHosts: "elasticsearch.elasticsearch:9200"
+pipeline: benchmark-only
+challenge: append-no-conflicts
+volClaimName: http-logs-pvc
+dataDir: /esrally-data
+reportFile: reportlogs.csv
+storageSize: 100Gi
